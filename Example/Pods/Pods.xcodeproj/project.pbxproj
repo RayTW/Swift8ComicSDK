@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		01596E882A8D0C3578712011E2836580 /* Swift8ComicSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE0919A62F5A49EA724648F6BAA4CE15 /* Swift8ComicSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15F3BBB6041C105A62D24435D7D336B9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96E3046F73956743CEEDF29CC2C24B7 /* Episode.swift */; };
 		30D7703E58BDD7DB921FB20ACD402132 /* Pods-Swift8ComicSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0800CAFCD0C699591457AA27CB72FBA /* Pods-Swift8ComicSDK_Tests-dummy.m */; };
+		4ECCBCF2F608C4D0B04AE419AA6379BF /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68A22784EA72B62DD53691A0C831E45 /* Comic.swift */; };
 		60F481874E1ABAF6FB76A0DFC2A98A09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		66B2F616DB704FCF6A5BAA990C4B6E33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		6AC72A67AF84C6C6ACBF8363F685E175 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025983BAF97587233435384B038F75BB /* Config.swift */; };
+		6F51D642D78D76FB39DADE91459A77C9 /* R8Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F7B334ABA289FE78421CEF6CC376F1 /* R8Comic.swift */; };
 		8267BB004FA95C445D98177651063261 /* Pods-Swift8ComicSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB7FD64A61364B3E97C830A34DDEC57 /* Pods-Swift8ComicSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82888F3D6188076224736FF7D7DD46F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		DAE945CB081911F025093F30EE4248A0 /* Swift8ComicSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E6E9580F9D05BCE33B46FA1F61F5FA /* Swift8ComicSDK-dummy.m */; };
 		E1998203DE0B5CAF1BB8BDBD853250C3 /* Pods-Swift8ComicSDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F16C1F08D697CD387DB9B128466CD /* Pods-Swift8ComicSDK_Example-dummy.m */; };
-		F357D89679075C3E9CE44C84D53A9C03 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AED6FABE84A326CC8A6E9FBF250AFE /* ReplaceMe.swift */; };
+		EEB08567FAEFF79528E3787BC7288050 /* Swift8ComicSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E6E9580F9D05BCE33B46FA1F61F5FA /* Swift8ComicSDK-dummy.m */; };
 		F7FA7E339AABB2261430DC2A03BB8C59 /* Pods-Swift8ComicSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFA018580CB1257FB17A285FAF2DBDC6 /* Pods-Swift8ComicSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -30,11 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025983BAF97587233435384B038F75BB /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		047F6E5CF43301C3F3950E3CA0E9244B /* Swift8ComicSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swift8ComicSDK.xcconfig; sourceTree = "<group>"; };
 		0A93B0EAE89AE13D531ECBB3994403D6 /* Pods-Swift8ComicSDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		166D94384028679F375BE8222C3B2E39 /* Pods-Swift8ComicSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Tests-resources.sh"; sourceTree = "<group>"; };
 		1C1207B4F58CBCA2745C44B3DFD0EFE7 /* Pods-Swift8ComicSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swift8ComicSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		25AED6FABE84A326CC8A6E9FBF250AFE /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		26FA54188001531DBC8C6BD6FDBDE39A /* Swift8ComicSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swift8ComicSDK-prefix.pch"; sourceTree = "<group>"; };
 		2C17A4FE91D9046E8C3D4A20EA713E26 /* Pods-Swift8ComicSDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Example-resources.sh"; sourceTree = "<group>"; };
 		413116E757764E58FEEBA79A41BC56E6 /* Swift8ComicSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Swift8ComicSDK.modulemap; sourceTree = "<group>"; };
@@ -42,13 +45,16 @@
 		6445BD7AC94AA2175CE0B5C047044427 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69E6E9580F9D05BCE33B46FA1F61F5FA /* Swift8ComicSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swift8ComicSDK-dummy.m"; sourceTree = "<group>"; };
 		6AD90BD7ECE5E8B2FD075E8D07AAD14B /* Pods-Swift8ComicSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Swift8ComicSDK_Tests.modulemap"; sourceTree = "<group>"; };
+		73F7B334ABA289FE78421CEF6CC376F1 /* R8Comic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = R8Comic.swift; sourceTree = "<group>"; };
 		7F537D8941DF5CE6CAEC194EC1BE8BEB /* Pods-Swift8ComicSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift8ComicSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		88263E7331CA0E3F3FA60FA32BFFBF2B /* Swift8ComicSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swift8ComicSDK.framework; path = Swift8ComicSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB7FD64A61364B3E97C830A34DDEC57 /* Pods-Swift8ComicSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swift8ComicSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A68A22784EA72B62DD53691A0C831E45 /* Comic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		A96B59E8220A1E3EC731A36C132129B7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9F16C1F08D697CD387DB9B128466CD /* Pods-Swift8ComicSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swift8ComicSDK_Example-dummy.m"; sourceTree = "<group>"; };
 		B1BA284C9003239668DB7728E4923D09 /* Pods-Swift8ComicSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
+		B96E3046F73956743CEEDF29CC2C24B7 /* Episode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		C82385A0FA147D85241EA3F1468FFF27 /* Pods-Swift8ComicSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift8ComicSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C90DF4CAE9F5FD2C27925DD4F3B0C13C /* Pods-Swift8ComicSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Swift8ComicSDK_Example.modulemap"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -133,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				79F9CC026CE05FCD9E75451223EBDC0E /* Support Files */,
-				91C5D3AD9949BA2956723FFE97F5510D /* Swift8ComicSDK */,
+				9CD3682CA38476985251F50EB31E7D7C /* Swift8ComicSDK */,
 			);
 			name = Swift8ComicSDK;
 			path = ../..;
@@ -172,19 +178,10 @@
 			);
 			sourceTree = "<group>";
 		};
-		8F30AC1B2D1CF122FB334B996B974D3A /* Classes */ = {
+		9CD3682CA38476985251F50EB31E7D7C /* Swift8ComicSDK */ = {
 			isa = PBXGroup;
 			children = (
-				25AED6FABE84A326CC8A6E9FBF250AFE /* ReplaceMe.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		91C5D3AD9949BA2956723FFE97F5510D /* Swift8ComicSDK */ = {
-			isa = PBXGroup;
-			children = (
-				8F30AC1B2D1CF122FB334B996B974D3A /* Classes */,
+				D642FACDEEE102A57E5B7B7BE1C92B01 /* Classes */,
 			);
 			name = Swift8ComicSDK;
 			path = Swift8ComicSDK;
@@ -204,6 +201,18 @@
 				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D642FACDEEE102A57E5B7B7BE1C92B01 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A68A22784EA72B62DD53691A0C831E45 /* Comic.swift */,
+				025983BAF97587233435384B038F75BB /* Config.swift */,
+				B96E3046F73956743CEEDF29CC2C24B7 /* Episode.swift */,
+				73F7B334ABA289FE78421CEF6CC376F1 /* R8Comic.swift */,
+			);
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		EA29349B730F2D1BE8C4AF6262B14D7F /* Pods-Swift8ComicSDK_Example */ = {
@@ -258,7 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD44FF13D324E75BD525CE7A847DB9D1 /* Build configuration list for PBXNativeTarget "Swift8ComicSDK" */;
 			buildPhases = (
-				52D380F1803500517D4EA72C26EE4252 /* Sources */,
+				0F1652396EAD5DCF9F4A671DD4BDDBCA /* Sources */,
 				0CF89C5DA850BF43EAFD917B836411F0 /* Frameworks */,
 				E43211814B83D993E434F7EDA3ECADC3 /* Headers */,
 			);
@@ -335,20 +344,23 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0F1652396EAD5DCF9F4A671DD4BDDBCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECCBCF2F608C4D0B04AE419AA6379BF /* Comic.swift in Sources */,
+				6AC72A67AF84C6C6ACBF8363F685E175 /* Config.swift in Sources */,
+				15F3BBB6041C105A62D24435D7D336B9 /* Episode.swift in Sources */,
+				6F51D642D78D76FB39DADE91459A77C9 /* R8Comic.swift in Sources */,
+				EEB08567FAEFF79528E3787BC7288050 /* Swift8ComicSDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F9DB6F93E0471EDB73354257F9FC961 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E1998203DE0B5CAF1BB8BDBD853250C3 /* Pods-Swift8ComicSDK_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52D380F1803500517D4EA72C26EE4252 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F357D89679075C3E9CE44C84D53A9C03 /* ReplaceMe.swift in Sources */,
-				DAE945CB081911F025093F30EE4248A0 /* Swift8ComicSDK-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

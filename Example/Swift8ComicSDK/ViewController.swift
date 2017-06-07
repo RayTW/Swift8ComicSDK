@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swift8ComicSDK
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func loadAllComic(_ sender: Any) {
+        R8Comic.get().getAll { (comics:[Comic]) in
+            
+            print("comics==>\(comics)")
+        }
+
+    }
 }
 
