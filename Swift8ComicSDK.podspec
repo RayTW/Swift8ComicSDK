@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Swift8ComicSDK'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Swift8ComicSDK.'
+  s.summary          = 'Comic SDK for iOS.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

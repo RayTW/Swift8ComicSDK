@@ -1,0 +1,6 @@
+framework module Pods_Swift8ComicSDK_Example {
+  umbrella header "Pods-Swift8ComicSDK_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
