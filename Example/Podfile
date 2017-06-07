@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Swift8ComicSDK_Example' do
+  pod 'Swift8ComicSDK', :path => '../'
+
+  target 'Swift8ComicSDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
