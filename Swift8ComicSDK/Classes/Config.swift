@@ -6,10 +6,10 @@
 //
 //
 
-public class Config {
-    public static let mComicHost : String = "http://www.comicbus.com/"
-    public let mSmallIconUrl : String = mComicHost + "/pics/0/%u\\s.jpg"
-    public let mIconUrl : String = mComicHost + "/pics/0/%u.jpg"
-    public let mAllUrl : String = mComicHost + "comic/all.html"
+open class Config {
+    open static let mComicHost : String = "http://www.comicbus.com/"
+    open let mSmallIconUrl : String = mComicHost + "pics/0/%u\\s.jpg"
+    open let mIconUrl : String = mComicHost + "pics/0/%u.jpg"
+    open let mAllUrl : String = mComicHost + "comic/all.html"
     
 }

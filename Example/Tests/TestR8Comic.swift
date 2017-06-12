@@ -32,8 +32,6 @@ class TestR8Comic: XCTestCase {
             
             XCTAssertNotNil(comics)
         }
-        
-        
     }
     
 }

@@ -24,9 +24,15 @@ class ViewController: UIViewController {
     @IBAction func loadAllComic(_ sender: Any) {
         R8Comic.get().getAll { (comics:[Comic]) in
             
-            print("comics==>\(comics)")
+            for comic : Comic  in comics {
+                print("id==>\(comic.getId()), name[\(comic.getName())]")
+            }
+            
         }
+        
+
 
     }
+   
 }
 

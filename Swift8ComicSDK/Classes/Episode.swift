@@ -8,6 +8,6 @@
 
 import Foundation
 
-public class Episode{
+open class Episode{
     
 }
