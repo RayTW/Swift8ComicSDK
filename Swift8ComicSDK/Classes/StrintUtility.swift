@@ -51,4 +51,11 @@ open class StrintUtility{
         return source.substring(from: beginIndex)
     }
     
+    open class func dataToStringBig5(data : Data) -> String{
+        let encodeBig5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5_HKSCS_1999.rawValue))
+        let string = NSString.init(data: data, encoding: encodeBig5)
+        
+        return string! as String;
+    }
+    
 }

@@ -22,12 +22,9 @@ open class R8Comic{
         
         let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
             if let data = data {
-                let encodeBig5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5_HKSCS_1999.rawValue))
-                let string = NSString.init(data: data, encoding: encodeBig5)
                 
-                
-                let comicAry = self.mParser.allComics(htmlString: string! as String)
-                
+                let string = StrintUtility.dataToStringBig5(data: data)
+                let comicAry = self.mParser.allComics(htmlString: string)
                 
                 if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
                     comics(comicAry)
