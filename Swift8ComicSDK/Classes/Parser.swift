@@ -19,40 +19,38 @@ open class Parser{
 
         let commicIdBegin = "showthumb("
         let commicIdEnd = ",this);"
-        var comicIdBeginIndex :Int = -1;
-        var comicIdEndIndex :Int = -1;
+        var comicIdBeginIndex :String.Index?;
+        var comicIdEndIndex :Range<String.Index>?;
         var comicId : String = "";
         
         let commicNameBegin = "hidethumb();'>"
         let commicNameEnd = "</a></td>"
-        var comicNameBeginIndex :Int = -1;
-        var comicNameEndIndex :Int = -1;
+        var comicNameBeginIndex :String.Index?;
+        var comicNameEndIndex :Range<String.Index>?;
         var comicName : String = "";
         
         
         var comicAry = [Comic]()
         
         while(true){
-            comicIdBeginIndex = StrintUtility.indexOf(source: html, search: commicIdBegin)
+            comicIdBeginIndex = StrintUtility.indexOfUpper(source: html, search: commicIdBegin)
             comicIdEndIndex = StrintUtility.indexOf(source: html, search: commicIdEnd)
             
-            if(comicIdBeginIndex == -1 || comicIdEndIndex == -1){
-                print("end,html=\(html)")
+            if(comicIdBeginIndex == nil || comicIdEndIndex == nil){
                 break;
             }
             
-            comicId = StrintUtility.substring(source: html, beginIndex: comicIdBeginIndex + StrintUtility.count(commicIdBegin), endIndex: comicIdEndIndex)
-            html = StrintUtility.substring(source: html, beginIndex: comicIdEndIndex + StrintUtility.count(commicIdEnd))
+            comicId = StrintUtility.substring(source: html, upper: comicIdBeginIndex!, lower: comicIdEndIndex!.lowerBound)
             
-            
-            comicNameBeginIndex = StrintUtility.indexOf(source: html, search: commicNameBegin)
+            html = StrintUtility.substring(source: html, beginIndex: comicIdEndIndex!.upperBound)
+            comicNameBeginIndex = StrintUtility.indexOfUpper(source: html, search: commicNameBegin)
             comicNameEndIndex = StrintUtility.indexOf(source: html, search: commicNameEnd)
             
-            if(comicNameBeginIndex == -1 || comicNameEndIndex == -1){
-                print("end,html=\(html)")
+            if(comicNameBeginIndex == nil || comicNameEndIndex == nil){
                 break;
             }
-            comicName = StrintUtility.substring(source: html, beginIndex: comicNameBeginIndex + StrintUtility.count(commicNameBegin), endIndex: comicNameEndIndex)
+
+            comicName = StrintUtility.substring(source: html, upper: comicNameBeginIndex!, lower: comicNameEndIndex!.lowerBound)
             
 
             let comic = Comic()

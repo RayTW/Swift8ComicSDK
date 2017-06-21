@@ -16,27 +16,39 @@ open class StrintUtility{
     open class func count(_ source : String) -> Int{
         return source.characters.count
     }
+
+    open class func indexOf(source : String, search : String) -> Range<String.Index>?{
+        return source.range(of: search)
+    }
     
-    open class func indexOf(source : String, search : String) -> Int{
-        let string = source as NSString
-        let range =  string.range(of: search)
+    open class func indexOfUpper(source : String, search : String) -> String.Index?{
+        let range =  source.range(of: search)
         
-        if(range.location == NSNotFound){
-            return -1
+        guard range != nil else {
+            return nil
         }
         
-        return range.location;
+        return range?.upperBound;
     }
     
-    open class func substring(source : String, beginIndex : Int, endIndex : Int) -> String{
-        let string = source as NSString
-        let range = NSMakeRange(beginIndex, endIndex - beginIndex);
+    open class func indexOfLower(source : String, search : String) -> String.Index?{
+        let range =  source.range(of: search)
         
-        return string.substring(with: range)
+        guard range != nil else {
+            return nil
+        }
+        
+        return range?.lowerBound;
     }
     
-    open class func substring(source : String, beginIndex : Int) -> String{
-        let string = source as NSString
-        return string.substring(from: beginIndex)
+    open class func substring(source : String, upper : String.Index, lower : String.Index) -> String{
+        let range = upper ..< lower
+        
+        return source.substring(with: range)
     }
+    
+    open class func substring(source : String, beginIndex : String.Index) -> String{
+        return source.substring(from: beginIndex)
+    }
+    
 }
