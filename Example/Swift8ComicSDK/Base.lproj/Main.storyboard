@@ -37,6 +37,14 @@
                                     <action selector="getAllTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oXc-QA-A43"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqx-IZ-dei">
+                                <rect key="frame" x="28" y="148" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="loadComicDetail"/>
+                                <connections>
+                                    <action selector="loadComicDetail:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kfm-Ly-xBu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

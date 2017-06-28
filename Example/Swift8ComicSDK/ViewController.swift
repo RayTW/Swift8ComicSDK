@@ -10,6 +10,8 @@ import UIKit
 import Swift8ComicSDK
 
 class ViewController: UIViewController {
+    fileprivate var mComics : [Comic]?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +25,15 @@ class ViewController: UIViewController {
 
     @IBAction func loadAllComic(_ sender: Any) {
         R8Comic.get().getAll { (comics:[Comic]) in
-            
+            self.mComics = comics
             for comic : Comic  in comics {
                 print("id==>\(comic.getId()), name[\(comic.getName())]")
             }
             
         }
         
-
+        
+      
 
     }
     @IBAction func getAllTest(_ sender: Any) {
@@ -43,5 +46,17 @@ class ViewController: UIViewController {
         }
     }
    
+    @IBAction func loadComicDetail(_ sender: Any) {
+        print("loadComicDetail 111")
+        guard self.mComics != nil && self.mComics!.count > 0 else {
+            return
+        }
+        print("loadComicDetail 222")
+        let comic = self.mComics![0]
+        
+        R8Comic.get().loadComicDetail(_:comic) { (comicDetail : Comic) in
+            print("loadFinish,id==>\(comicDetail.getId()), name[\(comicDetail.getName())]")
+        }
+    }
 }
 
