@@ -47,15 +47,16 @@ class ViewController: UIViewController {
     }
    
     @IBAction func loadComicDetail(_ sender: Any) {
-        print("loadComicDetail 111")
-        guard self.mComics != nil && self.mComics!.count > 0 else {
-            return
-        }
-        print("loadComicDetail 222")
-        let comic = self.mComics![0]
+        print("loadComicDetail")
+
+        let comic = R8Comic.get().generatorFakeComic("103", name: "海賊王")
         
-        R8Comic.get().loadComicDetail(_:comic) { (comicDetail : Comic) in
+        R8Comic.get().loadComicDetail(comic) { (comicDetail : Comic) in
             print("loadFinish,id==>\(comicDetail.getId()), name[\(comicDetail.getName())]")
+            
+            print("comic,Description=>\(comic.getDescription()!)")
+            print("comic,Author=>\(comic.getAuthor()!)")
+            print("comic,UpdateTime=>\(comic.getLatestUpdateDateTime()!)")
         }
     }
 }

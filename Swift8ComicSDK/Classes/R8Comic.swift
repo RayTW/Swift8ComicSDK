@@ -29,7 +29,7 @@ open class R8Comic{
                 if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
                     comics(comicAry)
                 } else {
-                    comics(comicAry)
+                    print("getAll fail")
                 }
             }
         })
@@ -45,13 +45,13 @@ open class R8Comic{
             if let data = data {
                 
                 let string = StringUtility.dataToStringBig5(data: data)
-                print("cmoic[\(comic.getId())]==>\(string)")
-//                let comicAry = self.mParser.allComics(htmlString: string)
+                
+                let comicDetail = self.mParser.comicDetail(htmlString: string, comic: comic)
                 
                 if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
-                   // comics(comicAry)
+                   onLoadDetail(comicDetail)
                 } else {
-                    //comics(comicAry)
+                    print("loadComicDetail fail")
                 }
             }
         })
@@ -66,4 +66,10 @@ open class R8Comic{
         return self.mConfig;
     }
     
+    open func generatorFakeComic(_ id : String, name : String) -> Comic{
+        let comic = Comic()
+        comic.setId(id)
+        comic.setName(name)
+        return comic
+    }
 }

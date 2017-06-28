@@ -9,12 +9,12 @@
 import Foundation
 
 open class Comic{
-    var mId : String? // 漫畫編號
-    var mName : String?// 漫畫名稱
-    var mAuthor : String?// 漫畫作者
-    var mLatestUpdateDateTime : String? //最後更新的時間
-    var mDescription : String? //漫畫描述
-    var mEpisodes = [Episode]() //漫畫集數列表
+    fileprivate var mId : String? // 漫畫編號
+    fileprivate var mName : String?// 漫畫名稱
+    fileprivate var mAuthor : String?// 漫畫作者
+    fileprivate var mLatestUpdateDateTime : String? //最後更新的時間
+    fileprivate var mDescription : String? //漫畫描述
+    fileprivate var mEpisodes = [Episode]() //漫畫集數列表
     
     open func getId() -> String{
         return mId!
@@ -39,4 +39,29 @@ open class Comic{
     open func getEpisode() -> [Episode]?{
         return mEpisodes
     }
+    
+    open func setId(_ id : String) -> Void{
+        mId = id
+    }
+    
+    open func setName(_ name : String) -> Void{
+        mName = name
+    }
+    
+    open func setAuthor(_ author : String) -> Void{
+        mAuthor = author
+    }
+    
+    open func setLatestUpdateDateTime(_ time : String) -> Void{
+        mLatestUpdateDateTime = time
+    }
+    
+    open func setDescription(_ description : String) -> Void{
+        mDescription = description
+    }
+    
+    open func setEpisode(_ episode : [Episode]) -> Void{
+        mEpisodes = episode
+    }
+
 }
