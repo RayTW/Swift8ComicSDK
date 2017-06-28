@@ -64,8 +64,7 @@ open class Parser{
     }
 
     open func comicDetail(htmlString : String, comic : Comic) -> Comic{
-        let html : [String] = htmlString.components(separatedBy: "\n")
-        
+        let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
         
         var tmpch = ""
         let findCview = "cview("
@@ -76,14 +75,46 @@ open class Parser{
         var findAuthorRange :Range<String.Index>?
         let updateTag = "更新：</td>"
         var latestUpdateTimeRange :Range<String.Index>?
+        let nameTag = ");return"
+        var nameTagRange :Range<String.Index>?
+        var episodes = [Episode]()
+        
+        comic.setEpisode(episodes)
         
         for txt in html {
             findCviewRange = StringUtility.indexOf(source: txt, search: findCview)
             
             //解析集數
             if(findCviewRange != nil){
+                nameTagRange = StringUtility.indexOf(source: txt, search: nameTag)
                 
+                var data = StringUtility.substring(source: txt, upper: (findCviewRange?.upperBound)!, lower: (nameTagRange?.lowerBound)!)
+                data = data.replacingOccurrences(of: "'", with: "")
+                tmpch = StringUtility.split(data, separatedBy: "[,]")[0] //集數圖片總張數參數
                 
+                if(nameTagRange == nil){
+                    nameTagRange = StringUtility.indexOf(source: txt, search: nameTag)
+                    
+                    if(nameTagRange != nil){
+                        continue
+                    }
+                }
+                //解析集數名稱
+                if(nameTagRange != nil){
+                    var episodeName = txt
+                    episodeName = self.removeScriptsTag(episodeName)
+                    episodeName = self.replaceTag(episodeName)
+                    episodeName = episodeName.replacingOccurrences(of: "[:]", with: ":")
+                    //episodeName = episodeName.replacingOccurrences(of: "[	]", with: "")
+                    
+                    if(!episodeName.isEmpty){
+                        let episode = Episode()
+                        episode.setName(episodeName)
+                        
+                        episodes.append(episode)
+//                        print("episodeName=>[\(episodeName)]")
+                    }
+                }
             }else{
                 //解析漫畫簡介
                 if(comic.getDescription() == nil){
@@ -121,6 +152,8 @@ open class Parser{
                 }
             }
         }
+        
+//        print("tmpch==>\(tmpch)")
         
         return comic;
     }

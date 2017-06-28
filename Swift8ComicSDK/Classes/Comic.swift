@@ -63,5 +63,4 @@ open class Comic{
     open func setEpisode(_ episode : [Episode]) -> Void{
         mEpisodes = episode
     }
-
 }

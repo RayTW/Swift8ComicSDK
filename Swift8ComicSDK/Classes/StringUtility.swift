@@ -58,4 +58,7 @@ open class StringUtility{
         return string! as String;
     }
     
+    open class func split(_ source : String, separatedBy : String) -> [String]{
+        return source.components(separatedBy: separatedBy)
+    }
 }
