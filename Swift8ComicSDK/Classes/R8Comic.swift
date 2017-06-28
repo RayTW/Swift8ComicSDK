@@ -1,5 +1,5 @@
 open class R8Comic{
-    fileprivate static let mInstance : R8Comic = R8Comic()
+    fileprivate static let sInstance : R8Comic = R8Comic()
     fileprivate var mConfig : Config = Config()
     fileprivate let mParser : Parser = Parser()
     
@@ -8,7 +8,7 @@ open class R8Comic{
     }
     
     open class func get() -> R8Comic{
-        return mInstance
+        return sInstance
     }
     
     func setConfig(_ config: Config){
