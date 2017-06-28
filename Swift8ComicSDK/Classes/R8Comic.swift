@@ -23,7 +23,7 @@ open class R8Comic{
         let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
             if let data = data {
                 
-                let string = StrintUtility.dataToStringBig5(data: data)
+                let string = StringUtility.dataToStringBig5(data: data)
                 let comicAry = self.mParser.allComics(htmlString: string)
                 
                 if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
@@ -34,13 +34,36 @@ open class R8Comic{
             }
         })
         task.resume()
+    }
+    
+    open func loadComicDetail(_ comic: Comic, onLoadDetail: @escaping (Comic) -> Void) -> Void{
+        let url = URL(string: mConfig.getComicDetailUrl(comic.getId()))
+        let request = URLRequest(url: url!)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        
-        
+        let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
+            if let data = data {
+                
+                let string = StringUtility.dataToStringBig5(data: data)
+                print("cmoic[\(comic.getId())]==>\(string)")
+//                let comicAry = self.mParser.allComics(htmlString: string)
+                
+                if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
+                   // comics(comicAry)
+                } else {
+                    //comics(comicAry)
+                }
+            }
+        })
+        task.resume()
     }
     
     open func getParser() -> Parser{
         return self.mParser;
+    }
+    
+    open func getConfig() -> Config{
+        return self.mConfig;
     }
     
 }

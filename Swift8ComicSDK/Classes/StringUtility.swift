@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class StrintUtility{
+open class StringUtility{
     
     public init() {
     }

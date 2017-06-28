@@ -33,24 +33,24 @@ open class Parser{
         var comicAry = [Comic]()
         
         while(true){
-            comicIdBeginIndex = StrintUtility.indexOfUpper(source: html, search: commicIdBegin)
-            comicIdEndIndex = StrintUtility.indexOf(source: html, search: commicIdEnd)
+            comicIdBeginIndex = StringUtility.indexOfUpper(source: html, search: commicIdBegin)
+            comicIdEndIndex = StringUtility.indexOf(source: html, search: commicIdEnd)
             
             if(comicIdBeginIndex == nil || comicIdEndIndex == nil){
                 break;
             }
             
-            comicId = StrintUtility.substring(source: html, upper: comicIdBeginIndex!, lower: comicIdEndIndex!.lowerBound)
+            comicId = StringUtility.substring(source: html, upper: comicIdBeginIndex!, lower: comicIdEndIndex!.lowerBound)
             
-            html = StrintUtility.substring(source: html, beginIndex: comicIdEndIndex!.upperBound)
-            comicNameBeginIndex = StrintUtility.indexOfUpper(source: html, search: commicNameBegin)
-            comicNameEndIndex = StrintUtility.indexOf(source: html, search: commicNameEnd)
+            html = StringUtility.substring(source: html, beginIndex: comicIdEndIndex!.upperBound)
+            comicNameBeginIndex = StringUtility.indexOfUpper(source: html, search: commicNameBegin)
+            comicNameEndIndex = StringUtility.indexOf(source: html, search: commicNameEnd)
             
             if(comicNameBeginIndex == nil || comicNameEndIndex == nil){
                 break;
             }
 
-            comicName = StrintUtility.substring(source: html, upper: comicNameBeginIndex!, lower: comicNameEndIndex!.lowerBound)
+            comicName = StringUtility.substring(source: html, upper: comicNameBeginIndex!, lower: comicNameEndIndex!.lowerBound)
             
 
             let comic = Comic()
@@ -63,7 +63,7 @@ open class Parser{
         return comicAry;
     }
 
-  
+    
 }
 
 
