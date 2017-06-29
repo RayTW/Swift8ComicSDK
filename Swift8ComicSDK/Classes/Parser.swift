@@ -66,7 +66,6 @@ open class Parser{
     open func comicDetail(htmlString : String, comic : Comic) -> Comic{
         let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
         
-        var tmpch = ""
         let findCview = "cview("
         let findDeaitlTag = "style=\"line-height:25px\">"
         var findCviewRange :Range<String.Index>?
@@ -77,7 +76,7 @@ open class Parser{
         var latestUpdateTimeRange :Range<String.Index>?
         let nameTag = ");return"
         var nameTagRange :Range<String.Index>?
-        var episodes = [Episode]()
+        var episodes = [Episode]() //建立集數物件
         
         comic.setEpisode(episodes)
         
@@ -90,7 +89,14 @@ open class Parser{
                 
                 var data = StringUtility.substring(source: txt, upper: (findCviewRange?.upperBound)!, lower: (nameTagRange?.lowerBound)!)
                 data = data.replacingOccurrences(of: "'", with: "")
-                tmpch = StringUtility.split(data, separatedBy: "[,]")[0] //集數圖片總張數參數
+                let dataAry = StringUtility.split(data, separatedBy: ",") //集數圖片總張數參數
+                
+                let ch : String = StringUtility.split(dataAry[0], separatedBy: "-")[0]
+                let url : String = dataAry[0]
+                    .replacingOccurrences(of: ".html", with: "")
+                    .replacingOccurrences(of: "-", with: ".html?ch=")
+                let catid : String = dataAry[1]
+                let copyright : String = dataAry[2]
                 
                 if(nameTagRange == nil){
                     nameTagRange = StringUtility.indexOf(source: txt, search: nameTag)
@@ -104,15 +110,18 @@ open class Parser{
                     var episodeName = txt
                     episodeName = self.removeScriptsTag(episodeName)
                     episodeName = self.replaceTag(episodeName)
-                    episodeName = episodeName.replacingOccurrences(of: "[:]", with: ":")
-                    //episodeName = episodeName.replacingOccurrences(of: "[	]", with: "")
+                    episodeName = episodeName.replacingOccurrences(of: ":", with: ":")
+                    episodeName = episodeName.replacingOccurrences(of: "\u{9}", with: "")
                     
                     if(!episodeName.isEmpty){
                         let episode = Episode()
                         episode.setName(episodeName)
+                        episode.setUrl(url)
+                        episode.setCatid(catid)
+                        episode.setCopyright(copyright)
+                        episode.setCh(ch)
                         
                         episodes.append(episode)
-//                        print("episodeName=>[\(episodeName)]")
                     }
                 }
             }else{
@@ -152,10 +161,51 @@ open class Parser{
                 }
             }
         }
-        
-//        print("tmpch==>\(tmpch)")
-        
+ 
         return comic;
+    }
+    
+    open func cviewJS(_ htmlString : String) -> [String: String]{
+        let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
+        let startTag = "if(catid"
+        let endTag = "baseurl=\""
+        var startTagUpper : String.Index?
+        var endTagLower : String.Index?
+        
+        let urlStratTag = endTag
+        let urlEndTag = "\";"
+        var urlStartTagUpper : String.Index?
+        var urlEndTagLower : String.Index?
+        
+        var cviewMap = [String: String]()
+        var tempText = ""
+        
+        for txt in html {
+            tempText = txt.replacingOccurrences(of: ")", with: "")
+            
+            if(!tempText.isEmpty){
+                startTagUpper = StringUtility.indexOfUpper(source: tempText, search: startTag)
+                endTagLower = StringUtility.indexOfLower(source: tempText, search: endTag)
+                
+                if(startTagUpper != nil && endTagLower != nil){
+                    let numCode : String = StringUtility.substring(source: tempText, upper: startTagUpper!, lower: endTagLower!)
+                    let numCodeAry : [String] = StringUtility.split(numCode, separatedBy: "||")
+                    urlStartTagUpper = StringUtility.indexOfUpper(source: tempText, search: urlStratTag)
+                    urlEndTagLower = StringUtility.indexOfLower(source: tempText, search: urlEndTag)
+                    var cviewUrl : String = StringUtility.substring(source: tempText, upper: urlStartTagUpper!, lower: urlEndTagLower!)
+                    
+                    cviewUrl = StringUtility.trim(cviewUrl)
+                    
+                    for num in numCodeAry{
+                        let tempNum = StringUtility.split(num, separatedBy: "==")
+                        cviewMap.updateValue(cviewUrl, forKey: StringUtility.trim(tempNum[1]))
+                    }
+                }
+            }
+        }
+        
+        
+        return cviewMap
     }
     
     open func replaceTag(_ txt : String) -> String{

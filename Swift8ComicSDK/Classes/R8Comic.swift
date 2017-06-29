@@ -15,6 +15,9 @@ open class R8Comic{
         mConfig = config
     }
     
+    /**
+     * 讀取全部漫畫編號、名稱
+     **/
     open func getAll(_ comics: @escaping ([Comic]) -> Void) -> Void {
         let url = URL(string: mConfig.mAllUrl)
         let request = URLRequest(url: url!)
@@ -36,6 +39,9 @@ open class R8Comic{
         task.resume()
     }
     
+    /**
+     * 讀取漫畫簡介、作者、最後更新日期、集數列表
+     **/
     open func loadComicDetail(_ comic: Comic, onLoadDetail: @escaping (Comic) -> Void) -> Void{
         let url = URL(string: mConfig.getComicDetailUrl(comic.getId()))
         let request = URLRequest(url: url!)
@@ -52,6 +58,31 @@ open class R8Comic{
                    onLoadDetail(comicDetail)
                 } else {
                     print("loadComicDetail fail")
+                }
+            }
+        })
+        task.resume()
+    }
+    
+    /**
+     * 讀取漫畫圖片實際存放的Server site網址列表
+     **/
+    open func loadSiteUrlList(_ onLoadList: @escaping ([String : String]) -> Void) -> Void{
+        let url = URL(string: mConfig.mCviewJSUrl)
+        let request = URLRequest(url: url!)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        
+        let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
+            if let data = data {
+                
+                let string = StringUtility.dataToStringBig5(data: data)
+                
+                let comicDetail = self.mParser.cviewJS(string)
+                
+                if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
+                    onLoadList(comicDetail)
+                } else {
+                    print("loadSiteUrlList fail")
                 }
             }
         })

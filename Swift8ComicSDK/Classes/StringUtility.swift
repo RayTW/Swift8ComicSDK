@@ -61,4 +61,8 @@ open class StringUtility{
     open class func split(_ source : String, separatedBy : String) -> [String]{
         return source.components(separatedBy: separatedBy)
     }
+    
+    open class func trim(_ source : String) -> String{
+        return source.trimmingCharacters(in: .whitespaces)
+    }
 }
