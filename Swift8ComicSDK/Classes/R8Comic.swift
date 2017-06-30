@@ -65,6 +65,32 @@ open class R8Comic{
     }
     
     /**
+     * 讀取漫畫簡介、作者、最後更新日期、集數列表
+     **/
+    open func loadEpisodeDetail(_ episode: Episode, onLoadDetail: @escaping (Episode) -> Void) -> Void{
+        let url = URL(string: episode.getUrl()) //wrok around
+        let request = URLRequest(url: url!)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        
+        let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
+            if let data = data {
+                
+                let string = StringUtility.dataToStringBig5(data: data)
+                
+                let detail = self.mParser.episodeDetail(string, episode: episode)
+                
+                if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
+                    onLoadDetail(detail)
+                } else {
+                    print("loadComicDetail fail")
+                }
+            }
+        })
+        task.resume()
+    }
+
+    
+    /**
      * 讀取漫畫圖片實際存放的Server site網址列表
      **/
     open func loadSiteUrlList(_ onLoadList: @escaping ([String : String]) -> Void) -> Void{
@@ -102,5 +128,12 @@ open class R8Comic{
         comic.setId(id)
         comic.setName(name)
         return comic
+    }
+    
+    open func generatorFakeEpisode(_ url : String) -> Episode{
+        let episode = Episode()
+        episode.setUrl(url)
+        
+        return episode
     }
 }

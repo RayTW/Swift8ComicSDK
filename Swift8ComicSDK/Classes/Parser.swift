@@ -208,6 +208,27 @@ open class Parser{
         return cviewMap
     }
     
+    open func episodeDetail(_ htmlString : String, episode : Episode) -> Episode{
+        let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
+        let startTagChs = "var chs="
+        let startTagTi = "var ti="
+        let startTagCs = "var cs="
+        let endTag = ";"
+        print("html==>\(html)");
+        
+        for txt in html {
+            print("txt==>\(txt)");
+            let chs = StringUtility.substring(source: txt, upperString: startTagChs, lowerString: endTag)
+            let ti = StringUtility.substring(source: txt, upperString: startTagTi, lowerString: endTag)
+            let cs = StringUtility.substring(source: txt, upperString: startTagCs, lowerString: endTag)
+            
+            print("chs[\(String(describing: chs))],ti[\(ti)],cs[\(cs)]")
+        }
+        
+        
+        return episode
+    }
+    
     open func replaceTag(_ txt : String) -> String{
         var ret = ""
         let st = "<"

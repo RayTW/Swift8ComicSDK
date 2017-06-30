@@ -47,6 +47,19 @@ open class StringUtility{
         return source.substring(with: range)
     }
     
+    open class func substring(source : String, upperString : String, lowerString : String ) -> String?{
+        let upper : String.Index? = indexOfUpper(source: source, search: upperString)
+        let lower : String.Index? = indexOfLower(source: source, search: lowerString)
+        
+        if(upper != nil && lower != nil){
+            let range = upper! ..< lower!
+            
+            return source.substring(with: range)
+        }
+        
+        return nil
+    }
+    
     open class func substring(source : String, beginIndex : String.Index) -> String{
         return source.substring(from: beginIndex)
     }

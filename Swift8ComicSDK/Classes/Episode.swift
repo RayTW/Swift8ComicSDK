@@ -14,6 +14,9 @@ open class Episode{
     fileprivate var mCatid : String?
     fileprivate var mCopyright : String?
     fileprivate var mCh : String?
+    fileprivate var mChs : Int = 0
+    fileprivate var mTi : Int = 0
+    fileprivate var mCs : Int = 0
     
     open func getName() -> String{
         return mName!
@@ -53,5 +56,29 @@ open class Episode{
     
     open func setCh(_ ch : String) -> Void{
         mCh = ch
+    }
+    
+    open func getChs() -> Int{
+        return mChs
+    }
+    
+    open func setChs(_ chs : Int) -> Void{
+        mChs = chs
+    }
+    
+    open func getTi() -> Int{
+        return mTi
+    }
+    
+    open func setTi(_ ti : Int) -> Void{
+        mTi = ti
+    }
+    
+    open func getCs() -> Int{
+        return mCs
+    }
+    
+    open func setCs(_ cs : Int) -> Void{
+        mCs = cs
     }
 }
