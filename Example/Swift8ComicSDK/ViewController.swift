@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func loadEpisodeDetail(_ sender: Any) {
-        let episode = R8Comic.get().generatorFakeEpisode("http:/www.comicbus.com/online/comic-103.html?ch=1")
+        let episode = R8Comic.get().generatorFakeEpisode("http://v.comicbus.com/online/comic-103.html?ch=1")
         
         R8Comic.get().loadEpisodeDetail(episode) { (Episode) in
             print("episode,getChs=>\(episode.getChs())")
