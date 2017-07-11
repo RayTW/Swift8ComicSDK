@@ -211,21 +211,30 @@ open class Parser{
     open func episodeDetail(_ htmlString : String, episode : Episode) -> Episode{
         let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
         let startTagChs = "var chs="
+        let endTagChs = ";var ti="
         let startTagTi = "var ti="
+        let endTagTi = ";var cs="
         let startTagCs = "var cs="
-        let endTag = ";"
-        print("html==>\(html)");
+        let endTagCs = "';eval(unescape('"
         
         for txt in html {
-            print("txt==>\(txt)");
-            let chs = StringUtility.substring(source: txt, upperString: startTagChs, lowerString: endTag)
-            let ti = StringUtility.substring(source: txt, upperString: startTagTi, lowerString: endTag)
-            let cs = StringUtility.substring(source: txt, upperString: startTagCs, lowerString: endTag)
+            let chs = StringUtility.substring(source: txt, upperString: startTagChs, lowerString: endTagChs)
+            let ti = StringUtility.substring(source: txt, upperString: startTagTi, lowerString: endTagTi)
+            let cs = StringUtility.substring(source: txt, upperString: startTagCs, lowerString: endTagCs)
             
-            print("chs[\(String(describing: chs))],ti[\(ti)],cs[\(cs)]")
+            
+            if(chs != nil){
+                episode.setChs(Int(chs!)!)
+            }
+            if(ti != nil){
+               episode.setTi(Int(ti!)!)
+            }
+            if(cs != nil){
+                episode.setCs(cs!)
+                break
+            }
         }
-        
-        
+    
         return episode
     }
     

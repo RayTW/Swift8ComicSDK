@@ -16,7 +16,8 @@ open class Episode{
     fileprivate var mCh : String?
     fileprivate var mChs : Int = 0
     fileprivate var mTi : Int = 0
-    fileprivate var mCs : Int = 0
+    fileprivate var mCs : String = ""
+    fileprivate var mImageUrl : [String] = [String]()//每頁漫畫圖片
     
     open func getName() -> String{
         return mName!
@@ -74,11 +75,19 @@ open class Episode{
         mTi = ti
     }
     
-    open func getCs() -> Int{
+    open func getCs() -> String{
         return mCs
     }
     
-    open func setCs(_ cs : Int) -> Void{
+    open func setCs(_ cs : String) -> Void{
         mCs = cs
+    }
+    
+    open func setImageUrlList(_ urlList : [String]){
+        mImageUrl = urlList
+    }
+    
+    open func getImageUrlList() -> [String]{
+        return mImageUrl
     }
 }
