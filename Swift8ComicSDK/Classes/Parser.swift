@@ -78,8 +78,6 @@ open class Parser{
         var nameTagRange :Range<String.Index>?
         var episodes = [Episode]() //建立集數物件
         
-        comic.setEpisode(episodes)
-        
         for txt in html {
             findCviewRange = StringUtility.indexOf(source: txt, search: findCview)
             
@@ -161,6 +159,7 @@ open class Parser{
                 }
             }
         }
+        comic.setEpisode(episodes)
  
         return comic;
     }
