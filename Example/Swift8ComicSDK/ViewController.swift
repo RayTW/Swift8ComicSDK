@@ -11,6 +11,7 @@ import Swift8ComicSDK
 
 class ViewController: UIViewController {
     fileprivate var mComics : [Comic]?
+    fileprivate var mHostMap : [String : String]?
     
 
     override func viewDidLoad() {
@@ -53,13 +54,49 @@ class ViewController: UIViewController {
             print("comic,Description=>\(comic.getDescription()!)")
             print("comic,Author=>\(comic.getAuthor()!)")
             print("comic,UpdateTime=>\(comic.getLatestUpdateDateTime()!)")
+            print("comic,EpisodeCount=>\(comic.getEpisode().count)")
         }
     }
+    
     @IBAction func loadEpisodeDetail(_ sender: Any) {
         let episode = R8Comic.get().generatorFakeEpisode("http://v.comicbus.com/online/comic-103.html?ch=1")
         
         R8Comic.get().loadEpisodeDetail(episode) { (Episode) in
             print("episode,getChs=>\(episode.getChs())")
+        }
+    }
+    
+    @IBAction func completeTest(_ sender: Any) {
+        //讀取漫畫存放的伺服器host
+        R8Comic.get().loadSiteUrlList { (hostMap : [String : String]) in
+            self.mHostMap = hostMap
+            
+            //取得全部漫畫
+            R8Comic.get().getAll { (comics:[Comic]) in
+                self.mComics = comics
+                let comic = comics[2]
+                
+                print("comic,id==>\(comic.getId()), name[\(comic.getName())]")
+                
+                //單1本漫畫，解析說明、集數等等資料…
+                R8Comic.get().loadComicDetail(comic, onLoadDetail: { (comic) in
+                    
+                    
+                    print("comic,集數==>\(comic.getEpisode().count)")
+                    //單集漫畫讀取圖片網址資料
+                    let episode = comic.getEpisode()[0]
+                    episode.setUrl(hostMap[episode.getCatid()]! + episode.getUrl())
+                    
+                    print("comic,episode名稱==>\(episode.getName())")
+                    print("comic,episode,ch==>\(episode.getCh())")
+                    print("comic,episode,url==>\(episode.getUrl())")
+                    
+                    R8Comic.get().loadEpisodeDetail(episode, onLoadDetail: { (episode) in
+                        print("episode,getChs=>\(episode.getChs())")
+                        
+                    })
+                })
+            }
         }
     }
 }

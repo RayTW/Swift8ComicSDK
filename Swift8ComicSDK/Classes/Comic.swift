@@ -36,7 +36,7 @@ open class Comic{
         return mDescription
     }
     
-    open func getEpisode() -> [Episode]?{
+    open func getEpisode() -> [Episode]{
         return mEpisodes
     }
     
