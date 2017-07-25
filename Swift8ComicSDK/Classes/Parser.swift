@@ -14,7 +14,7 @@ open class Parser{
     public init() {
     }
     
-    open func allComics(htmlString : String) -> [Comic]{
+    open func allComics(_ htmlString : String, _ config: Config) -> [Comic]{
         var html : String = htmlString
 
         let commicIdBegin = "showthumb("
@@ -56,6 +56,8 @@ open class Parser{
             let comic = Comic()
             comic.setId(comicId)
             comic.setName(comicName)
+            comic.setIconUrl(config.getComicIconUrl(comicId))
+            comic.setSmallIconUrl(config.getComicSmallIconUrl(comicId))
             comicAry.append(comic)
         }
 

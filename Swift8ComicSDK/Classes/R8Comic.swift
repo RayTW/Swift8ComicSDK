@@ -27,7 +27,7 @@ open class R8Comic{
             if let data = data {
                 
                 let string = StringUtility.dataToStringBig5(data: data)
-                let comicAry = self.mParser.allComics(htmlString: string)
+                let comicAry = self.mParser.allComics(string, self.mConfig)
                 
                 if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
                     comics(comicAry)
@@ -113,6 +113,20 @@ open class R8Comic{
             }
         })
         task.resume()
+    }
+    
+    /*
+     * 取得指定漫畫封面大圖
+     */
+    open func getComicIconUrl(_ comicId: String) -> String{
+        return self.mConfig.getComicIconUrl(comicId)
+    }
+    
+    /*
+     * 取得指定漫畫封面小圖
+     */
+    open func getComicSmallIconUrl(_ comicId: String) -> String{
+        return self.mConfig.getComicSmallIconUrl(comicId)
     }
     
     open func getParser() -> Parser{

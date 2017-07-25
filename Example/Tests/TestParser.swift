@@ -32,7 +32,7 @@ class TestParser: XCTestCase {
         html += "</tr><tr>"
         html += "<td style=\"width:20%;\"><a href=\"/html/12355.html\" onmouseover='showthumb(12355,this);' onmouseout='hidethumb();'>ZOMBIE</a></td><td style=\"width:20%;\"><a href=\"/html/8874.html\" onmouseover='showthumb(8874,this);' onmouseout='hidethumb();'>砸扁你</a></td><td style=\"width:20%;\"><a href=\"/html/362.html\" onmouseover='showthumb(362,this);' onmouseout='hidethumb();'>雜居時代</a></td><td style=\"width:20%;\"><a href=\"/html/13303.html\" onmouseover='showthumb(13303,this);' onmouseout='hidethumb();'>災難女友</a></td><td style=\"width:20%;\"><a href=\"/html/14610.html\" onmouseover='showthumb(14610,this);' onmouseout='hidethumb();'>災難太過喜歡我</a></td>"
         html += "</tr><tr>"
-        let comicAry = mParser.allComics(htmlString: html)
+        let comicAry = mParser.allComics(html, R8Comic.get().getConfig())
         
         XCTAssertNotNil(comicAry, "comicAry == nil")
     }

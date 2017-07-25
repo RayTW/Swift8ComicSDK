@@ -10,6 +10,8 @@ import Foundation
 
 open class Comic{
     fileprivate var mId : String? // 漫畫編號
+    fileprivate var mIconUrl : String? // 漫畫封面大圖網址
+    fileprivate var mSmallIconUrl : String? // 漫畫封面小圖網址
     fileprivate var mName : String?// 漫畫名稱
     fileprivate var mAuthor : String?// 漫畫作者
     fileprivate var mLatestUpdateDateTime : String? //最後更新的時間
@@ -18,6 +20,14 @@ open class Comic{
     
     open func getId() -> String{
         return mId!
+    }
+    
+    open func getIconUrl() -> String?{
+        return mIconUrl
+    }
+    
+    open func getSmallIconUrl() -> String?{
+        return mSmallIconUrl
     }
     
     open func getName() -> String{
@@ -42,6 +52,14 @@ open class Comic{
     
     open func setId(_ id : String) -> Void{
         mId = id
+    }
+    
+    open func setIconUrl(_ url : String) -> Void{
+        mIconUrl = url
+    }
+    
+    open func setSmallIconUrl(_ url : String) -> Void{
+        mSmallIconUrl = url
     }
     
     open func setName(_ name : String) -> Void{
