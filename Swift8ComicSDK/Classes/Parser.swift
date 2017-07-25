@@ -92,7 +92,6 @@ open class Parser{
                 data = data.replacingOccurrences(of: "'", with: "")
                 let dataAry = StringUtility.split(data, separatedBy: ",") //集數圖片總張數參數
                 
-                let comicId : String = StringUtility.split(dataAry[0], separatedBy: "-")[0]
                 let ch : String = StringUtility.split(dataAry[0], separatedBy: "-")[1].replacingOccurrences(of: ".html", with: "")
                 let url : String = dataAry[0]
                     .replacingOccurrences(of: ".html", with: "")
