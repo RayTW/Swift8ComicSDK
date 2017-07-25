@@ -78,7 +78,8 @@ open class Parser{
         var nameTagRange :Range<String.Index>?
         var episodes = [Episode]() //建立集數物件
         
-        for txt in html {
+        for i in 0..<html.count {
+            let txt : String = html[i]
             findCviewRange = StringUtility.indexOf(source: txt, search: findCview)
             
             //解析集數
@@ -89,13 +90,14 @@ open class Parser{
                 data = data.replacingOccurrences(of: "'", with: "")
                 let dataAry = StringUtility.split(data, separatedBy: ",") //集數圖片總張數參數
                 
-                let ch : String = StringUtility.split(dataAry[0], separatedBy: "-")[0]
+                let comicId : String = StringUtility.split(dataAry[0], separatedBy: "-")[0]
+                let ch : String = StringUtility.split(dataAry[0], separatedBy: "-")[1].replacingOccurrences(of: ".html", with: "")
                 let url : String = dataAry[0]
                     .replacingOccurrences(of: ".html", with: "")
                     .replacingOccurrences(of: "-", with: ".html?ch=")
                 let catid : String = dataAry[1]
                 let copyright : String = dataAry[2]
-                
+                               
                 if(nameTagRange == nil){
                     nameTagRange = StringUtility.indexOf(source: txt, search: nameTag)
                     
@@ -105,7 +107,7 @@ open class Parser{
                 }
                 //解析集數名稱
                 if(nameTagRange != nil){
-                    var episodeName = txt
+                    var episodeName = html[i + 1]
                     episodeName = self.removeScriptsTag(episodeName)
                     episodeName = self.replaceTag(episodeName)
                     episodeName = episodeName.replacingOccurrences(of: ":", with: ":")
@@ -213,7 +215,7 @@ open class Parser{
         let endTagChs = ";var ti="
         let startTagTi = "var ti="
         let endTagTi = ";var cs="
-        let startTagCs = "var cs="
+        let startTagCs = "var cs='"
         let endTagCs = "';eval(unescape('"
         
         for txt in html {
