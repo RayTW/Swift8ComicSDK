@@ -64,6 +64,20 @@ open class StringUtility{
         return source.substring(from: beginIndex)
     }
     
+    //like JAVA String.substring(beginIndex, endIndex)
+    open class func substring(_ source : String, _ beginIndex : Int, _ endIndex : Int ) -> String{
+        let subLen : Int = endIndex - beginIndex
+        
+        if(subLen < 0){
+            return ""
+        }
+        let beginInx = source.index(source.startIndex, offsetBy: beginIndex)
+        let endInx = source.index(source.startIndex, offsetBy: endIndex)
+        let range = beginInx ..< endInx
+
+        return source.substring(with: range)
+    }
+    
     open class func dataToStringBig5(data : Data) -> String{
         let encodeBig5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5_HKSCS_1999.rawValue))
         let string = NSString.init(data: data, encoding: encodeBig5)
@@ -78,4 +92,5 @@ open class StringUtility{
     open class func trim(_ source : String) -> String{
         return source.trimmingCharacters(in: .whitespaces)
     }
+    
 }
