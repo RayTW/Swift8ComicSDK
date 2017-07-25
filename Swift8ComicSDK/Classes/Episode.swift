@@ -23,10 +23,16 @@ open class Episode{
     
     fileprivate let mF : Int = 50
     
+    /*
+     * 取得單集漫畫名稱
+     */
     open func getName() -> String{
         return mName!
     }
     
+    /*
+     * 設定單集漫畫名稱
+     */
     open func setName(_ name : String) -> Void{
         mName = name
     }
@@ -55,6 +61,9 @@ open class Episode{
         mCopyright = copyright
     }
     
+    /*
+     * 取得集數編號，例如1、2、3…
+     */
     open func getCh() -> Int{
         return mCh!
     }
@@ -63,6 +72,9 @@ open class Episode{
         mCh = Int(ch)
     }
     
+    /*
+     * 取得最新集數，例如最新第68號，此回傳值則為68
+     */
     open func getChs() -> Int{
         return mChs
     }
@@ -79,6 +91,9 @@ open class Episode{
         mTi = ti
     }
     
+    /*
+     * 取得單集漫畫混淆過的編碼
+     */
     open func getCs() -> String{
         return mCs
     }
@@ -87,6 +102,7 @@ open class Episode{
         mCs = cs
     }
     
+    //讀取1話(集、卷)全部漫畫圖片網址
     open func setUpPages(){
         sp()
         let totalPage = mPs
@@ -96,6 +112,16 @@ open class Episode{
         }
     }
     
+    /*
+     * 取得單集(話、卷)圖片總頁數
+     */
+    open func getPages() -> Int{
+        return mPs
+    }
+    
+    /*
+     * 取得單集(話、卷)全部圖片下載網址，張數等同getPages()
+     */
     open func getImageUrlList() -> [String]{
         return mImageUrl
     }

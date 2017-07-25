@@ -108,6 +108,8 @@ class ViewController: UIViewController {
                         
                         episode.setUpPages()
                         
+                        print("episode,單集多張圖片網址=>\(episode.getImageUrlList())")
+                        
                     })
                 })
             }
