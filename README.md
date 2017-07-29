@@ -55,28 +55,10 @@ Add trusted comic site in info.plist
 ```
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>v.comicbus.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSTemporaryExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>www.comicbus.com</key>
-			<dict>
-				<key>NSTemporaryExceptionRequiresForwardSecrecy</key>
-				<false/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-			</dict>
-		</dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 	</dict>
+
 ```
 ## Installation
 
