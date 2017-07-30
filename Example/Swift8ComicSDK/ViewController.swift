@@ -13,17 +13,17 @@ class ViewController: UIViewController {
     fileprivate var mComics : [Comic]?
     fileprivate var mHostMap : [String : String]?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func loadAllComic(_ sender: Any) {
         R8Comic.get().getAll { (comics:[Comic]) in
             self.mComics = comics
@@ -42,10 +42,10 @@ class ViewController: UIViewController {
             print("id==>\(comic.getId()), name[\(comic.getName())]")
         }
     }
-   
+    
     @IBAction func loadComicDetail(_ sender: Any) {
         print("loadComicDetail")
-
+        
         let comic = R8Comic.get().generatorFakeComic("103", name: "海賊王")
         
         R8Comic.get().loadComicDetail(comic) { (comicDetail : Comic) in
@@ -67,8 +67,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func completeTest(_ sender: Any) {
-        doCompleteTest()
-//        substringTest()
+        doCompleteTest("103")
+        //        substringTest()
     }
     
     func substringTest() -> Void {
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         print("\(StringUtility.substring(str, 50, 54))")
     }
     
-    func doCompleteTest() -> Void {
+    func doCompleteTest(_ comicId : String!) -> Void {
         //讀取漫畫存放的伺服器host
         R8Comic.get().loadSiteUrlList { (hostMap : [String : String]) in
             self.mHostMap = hostMap
@@ -85,7 +85,19 @@ class ViewController: UIViewController {
             //取得全部漫畫
             R8Comic.get().getAll { (comics:[Comic]) in
                 self.mComics = comics
-                let comic = comics[comics.count - 1]
+                var oneComic : Comic? = nil
+                
+                for comicTemp : Comic  in comics {
+                    print("id==>\(comicTemp.getId()), name[\(comicTemp.getName())]")
+                    
+                    if(comicTemp.getId() == comicId) {
+                        oneComic = comicTemp
+                        break
+                    }
+                }
+                
+                let comic = oneComic!
+                
                 
                 print("comic,id==>\(comic.getId()), name[\(comic.getName())]")
                 print("comic,封面大圖==>\(comic.getIconUrl()), 封面小圖[\(comic.getSmallIconUrl())]")
