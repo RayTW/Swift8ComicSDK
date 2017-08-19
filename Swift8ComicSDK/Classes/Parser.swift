@@ -223,9 +223,6 @@ open class Parser{
             let chs = StringUtility.substring(txt, startTagChs, endTagChs)
             let ti = StringUtility.substring(txt, startTagTi, endTagTi)
             let cs = StringUtility.substring(txt, startTagCs, endTagCs)
-            print("cs==>\(cs)")
-            print("chs==>\(chs)")
-            print("ti==>\(ti)")
             
             if(chs != nil){
                 episode.setChs(Int(chs!)!)

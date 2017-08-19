@@ -72,7 +72,6 @@ open class JSnview{
         return invokeJS(mSource!, JSnview.Y, mCh!)
     }
     
-    //private List<String> invokeJS(String js, int y, int ch) {
     open func invokeJS(_ js : String, _ y : Int, _ ch : Int) -> [String]{
         var list : [String] = [String]()
         var str : String = StringUtility.substring(js, 0, StringUtility.indexOfInt(js, "var pt="))
@@ -85,22 +84,13 @@ open class JSnview{
         str = StringUtility.replace(str, "break;", getPageJS)
         let script : String = "function sp2(ch, y){" + str + "} " + buildNviewJS()
         
-        print("script==\(script)")
-        
         mJSContext.evaluateScript(script)
         
         //取出funciton sp2()
         let sp2Function = mJSContext.objectForKeyedSubscript("sp2")
-        print("sp2Function==\(sp2Function)")
+        //呼叫javsccript的 sp2() function
         let jsvalue : JSValue = (sp2Function?.call(withArguments: [ch, y]))!
-        
-        //TODO 待尋求解決，可何用swift呼叫js function回傳JS array後，轉為swift array
-        print("jsvalue==\(jsvalue)")
-        
-        //jsvalue==undefined
-        let ary : Any = jsvalue.toObject()
-        
-         print("ary==\(ary)")
+        list = jsvalue.toArray() as! [String]
         
         return list;
     }
@@ -113,6 +103,7 @@ open class JSnview{
         buf.append("%@")
         buf.append("result.push(src);")
         buf.append("}")
+        buf.append("return result;")
         
         return buf;
     }
