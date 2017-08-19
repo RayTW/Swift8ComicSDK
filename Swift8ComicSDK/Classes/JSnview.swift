@@ -73,13 +73,12 @@ open class JSnview{
     }
     
     open func invokeJS(_ js : String, _ y : Int, _ ch : Int) -> [String]{
-        var list : [String] = [String]()
         var str : String = StringUtility.substring(js, 0, StringUtility.indexOfInt(js, "var pt="))
         str = StringUtility.replace(str, "ge('TheImg').src", "var src")
         let unuseScript : String = StringUtility.substring(str, "\'.jpg\';", "break;")!
         str = StringUtility.replace(str, unuseScript, "")
-        var varSrc : String = StringUtility.substring(str, "ci = i; ", "break;")!
-        var getPageJS : String = String.init(format: buildGetPagesJS(), varSrc)
+        let varSrc : String = StringUtility.substring(str, "ci = i; ", "break;")!
+        let getPageJS : String = String.init(format: buildGetPagesJS(), varSrc)
         str = StringUtility.replace(str, varSrc, "")
         str = StringUtility.replace(str, "break;", getPageJS)
         let script : String = "function sp2(ch, y){" + str + "} " + buildNviewJS()
@@ -90,7 +89,7 @@ open class JSnview{
         let sp2Function = mJSContext.objectForKeyedSubscript("sp2")
         //呼叫javsccript的 sp2() function
         let jsvalue : JSValue = (sp2Function?.call(withArguments: [ch, y]))!
-        list = jsvalue.toArray() as! [String]
+        let list = jsvalue.toArray() as! [String]
         
         return list;
     }
