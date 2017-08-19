@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import JavaScriptCore
 
 open class JSnview{
     fileprivate var mSource : String?
@@ -19,6 +20,7 @@ open class JSnview{
     fileprivate var mCs : String = ""
     fileprivate var mC : String = ""
     fileprivate static let Y : Int = 46;
+    fileprivate let mJSContext = JSContext()!
     
     open func setSource(_ source : String){
         mSource = source
@@ -84,6 +86,21 @@ open class JSnview{
         let script : String = "function sp2(ch, y){" + str + "} " + buildNviewJS()
         
         print("script==\(script)")
+        
+        mJSContext.evaluateScript(script)
+        
+        //取出funciton sp2()
+        let sp2Function = mJSContext.objectForKeyedSubscript("sp2")
+        print("sp2Function==\(sp2Function)")
+        let jsvalue : JSValue = (sp2Function?.call(withArguments: [ch, y]))!
+        
+        //TODO 待尋求解決，可何用swift呼叫js function回傳JS array後，轉為swift array
+        print("jsvalue==\(jsvalue)")
+        
+        //jsvalue==undefined
+        let ary : Any = jsvalue.toObject()
+        
+         print("ary==\(ary)")
         
         return list;
     }
