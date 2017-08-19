@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func completeTest(_ sender: Any) {
-        doCompleteTest("5491")
+        doCompleteTest("103")
         //        substringTest()
     }
     
