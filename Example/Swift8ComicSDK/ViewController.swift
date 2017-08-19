@@ -62,12 +62,12 @@ class ViewController: UIViewController {
         let episode = R8Comic.get().generatorFakeEpisode("http://v.comicbus.com/online/comic-103.html?ch=1")
         
         R8Comic.get().loadEpisodeDetail(episode) { (Episode) in
-            print("episode,getChs=>\(episode.getChs())")
+            print("episode=>\(episode)")
         }
     }
     
     @IBAction func completeTest(_ sender: Any) {
-        doCompleteTest("103")
+        doCompleteTest("5491")
         //        substringTest()
     }
     
@@ -111,13 +111,13 @@ class ViewController: UIViewController {
                     let episode = comic.getEpisode()[0]
                     episode.setUrl(hostMap[episode.getCatid()]! + episode.getUrl())
                     
-                    print("comic,episode名稱==>\(episode.getName())")
-                    print("comic,episode,ch==>\(episode.getCh())")
+                    
+                    print("comic,episode,ch==>\(episode)")
                     print("comic,episode,url==>\(episode.getUrl())")
                     
                     
                     R8Comic.get().loadEpisodeDetail(episode, onLoadDetail: { (episode) in
-                        print("episode,getChs=>\(episode.getChs())")
+                        print("comic,episode,ch==>\(episode)")
                         
                         episode.setUpPages()
                         
