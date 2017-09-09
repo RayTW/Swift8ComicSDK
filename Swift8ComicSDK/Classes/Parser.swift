@@ -16,18 +16,18 @@ open class Parser{
     
     open func allComics(_ htmlString : String, _ config: Config) -> [Comic]{
         var html : String = htmlString
-
-        let commicIdBegin = "showthumb("
-        let commicIdEnd = ",this)"
-        var comicIdBeginIndex :String.Index?
-        var comicIdEndIndex :Range<String.Index>?
-        var comicId : String = ""
         
-        let commicNameBegin = "hidethumb()'>"
+        let commicIdBegin = "showthumb("
+        let commicIdEnd = ",this);"
+        var comicIdBeginIndex :String.Index?;
+        var comicIdEndIndex :Range<String.Index>?;
+        var comicId : String = "";
+        
+        let commicNameBegin = "hidethumb();'>"
         let commicNameEnd = "</a></td>"
-        var comicNameBeginIndex :String.Index?
-        var comicNameEndIndex :Range<String.Index>?
-        var comicName : String = ""
+        var comicNameBeginIndex :String.Index?;
+        var comicNameEndIndex :Range<String.Index>?;
+        var comicName : String = "";
         
         
         var comicAry = [Comic]()
@@ -49,10 +49,10 @@ open class Parser{
             if(comicNameBeginIndex == nil || comicNameEndIndex == nil){
                 break
             }
-
+            
             comicName = StringUtility.substring(source: html, upper: comicNameBeginIndex!, lower: comicNameEndIndex!.lowerBound)
             
-
+            
             let comic = Comic()
             comic.setId(comicId)
             comic.setName(comicName)
@@ -60,23 +60,23 @@ open class Parser{
             comic.setSmallIconUrl(config.getComicSmallIconUrl(comicId))
             comicAry.append(comic)
         }
-
+        
         
         return comicAry
     }
-
+    
     open func comicDetail(htmlString : String, comic : Comic) -> Comic{
         let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
         
         let findCview = "cview("
         let findDeaitlTag = "style=\"line-height:25px\">"
         var findCviewRange :Range<String.Index>?
-        var findDetailTagRange :Range<String.Index>?
+        var findDetailTagRange :Range<String.Index>?;
         let authorTag = "作者：</td>"
         var findAuthorRange :Range<String.Index>?
         let updateTag = "更新：</td>"
         var latestUpdateTimeRange :Range<String.Index>?
-        let nameTag = ")return"
+        let nameTag = ");return"
         var nameTagRange :Range<String.Index>?
         var episodes = [Episode]() //建立集數物件
         
@@ -98,7 +98,7 @@ open class Parser{
                     .replacingOccurrences(of: "-", with: ".html?ch=")
                 let catid : String = dataAry[1]
                 let copyright : String = dataAry[2]
-                               
+                
                 if(nameTagRange == nil){
                     nameTagRange = StringUtility.indexOf(source: txt, search: nameTag)
                     
@@ -163,7 +163,7 @@ open class Parser{
             }
         }
         comic.setEpisode(episodes)
- 
+        
         return comic
     }
     
@@ -175,7 +175,7 @@ open class Parser{
         var endTagLower : String.Index?
         
         let urlStratTag = endTag
-        let urlEndTag = "\""
+        let urlEndTag = "\";"
         var urlStartTagUpper : String.Index?
         var urlEndTagLower : String.Index?
         
@@ -213,11 +213,11 @@ open class Parser{
     open func episodeDetail(_ htmlString : String, episode : Episode) -> Episode{
         let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
         let startTagChs = "var chs="
-        let endTagChs = "var ti="
+        let endTagChs = ";var ti="
         let startTagTi = "var ti="
-        let endTagTi = "var cs="
+        let endTagTi = ";var cs="
         let startTagCs = "var cs='"
-        let endTagCs = "'for(var"
+        let endTagCs = "';for(var"
         
         for txt in html {
             let chs = StringUtility.substring(txt, startTagChs, endTagChs)
@@ -228,7 +228,7 @@ open class Parser{
                 episode.setChs(Int(chs!)!)
             }
             if(ti != nil){
-               episode.setTi(Int(ti!)!)
+                episode.setTi(Int(ti!)!)
             }
             if(cs != nil){
                 episode.setCs(cs!)
@@ -236,7 +236,7 @@ open class Parser{
                 break
             }
         }
-    
+        
         return episode
     }
     
