@@ -61,6 +61,22 @@
                                     <action selector="completeTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bA0-48-w0S"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcs-Dz-i4y">
+                                <rect key="frame" x="28" y="356" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="quickSearchTest"/>
+                                <connections>
+                                    <action selector="quickSearchTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="adB-2w-BAN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNg-Gd-Wid">
+                                <rect key="frame" x="28" y="318" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="searchTest"/>
+                                <connections>
+                                    <action selector="searchTest:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3xZ-kb-Rmi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
