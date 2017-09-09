@@ -218,7 +218,6 @@ open class Parser{
         let endTagTi = "var cs="
         let startTagCs = "var cs='"
         let endTagCs = "'for(var"
-        var comicAry = [Comic]()
         
         for txt in html {
             let chs = StringUtility.substring(txt, startTagChs, endTagChs)

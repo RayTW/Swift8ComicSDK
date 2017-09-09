@@ -153,7 +153,7 @@ open class R8Comic{
                                     if let data = data {
                                         
                                         let htmlString = StringUtility.dataToStringBig5(data: data)
-                                        let maxPage = self.mParser.searchComic(htmlString, onLoadComics: { (list : [Comic]) in
+                                        self.mParser.searchComic(htmlString, onLoadComics: { (list : [Comic]) in
                                             comics += list
                                         })
                                         
