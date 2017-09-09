@@ -128,5 +128,15 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func testSearchComic(keyword : String){
+        R8Comic.get().searchComic(keyword) { (comics) in
+            print("searchComic=>\(comics.count)")
+            
+            for comicTemp : Comic  in comics {
+                print("id==>\(comicTemp.getId()), name[\(comicTemp.getName())]")
+            }
+        }
+    }
 }
 

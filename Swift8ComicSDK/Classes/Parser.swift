@@ -18,16 +18,16 @@ open class Parser{
         var html : String = htmlString
 
         let commicIdBegin = "showthumb("
-        let commicIdEnd = ",this);"
-        var comicIdBeginIndex :String.Index?;
-        var comicIdEndIndex :Range<String.Index>?;
-        var comicId : String = "";
+        let commicIdEnd = ",this)"
+        var comicIdBeginIndex :String.Index?
+        var comicIdEndIndex :Range<String.Index>?
+        var comicId : String = ""
         
-        let commicNameBegin = "hidethumb();'>"
+        let commicNameBegin = "hidethumb()'>"
         let commicNameEnd = "</a></td>"
-        var comicNameBeginIndex :String.Index?;
-        var comicNameEndIndex :Range<String.Index>?;
-        var comicName : String = "";
+        var comicNameBeginIndex :String.Index?
+        var comicNameEndIndex :Range<String.Index>?
+        var comicName : String = ""
         
         
         var comicAry = [Comic]()
@@ -37,7 +37,7 @@ open class Parser{
             comicIdEndIndex = StringUtility.indexOf(source: html, search: commicIdEnd)
             
             if(comicIdBeginIndex == nil || comicIdEndIndex == nil){
-                break;
+                break
             }
             
             comicId = StringUtility.substring(source: html, upper: comicIdBeginIndex!, lower: comicIdEndIndex!.lowerBound)
@@ -47,7 +47,7 @@ open class Parser{
             comicNameEndIndex = StringUtility.indexOf(source: html, search: commicNameEnd)
             
             if(comicNameBeginIndex == nil || comicNameEndIndex == nil){
-                break;
+                break
             }
 
             comicName = StringUtility.substring(source: html, upper: comicNameBeginIndex!, lower: comicNameEndIndex!.lowerBound)
@@ -62,7 +62,7 @@ open class Parser{
         }
 
         
-        return comicAry;
+        return comicAry
     }
 
     open func comicDetail(htmlString : String, comic : Comic) -> Comic{
@@ -71,12 +71,12 @@ open class Parser{
         let findCview = "cview("
         let findDeaitlTag = "style=\"line-height:25px\">"
         var findCviewRange :Range<String.Index>?
-        var findDetailTagRange :Range<String.Index>?;
+        var findDetailTagRange :Range<String.Index>?
         let authorTag = "作者：</td>"
         var findAuthorRange :Range<String.Index>?
         let updateTag = "更新：</td>"
         var latestUpdateTimeRange :Range<String.Index>?
-        let nameTag = ");return"
+        let nameTag = ")return"
         var nameTagRange :Range<String.Index>?
         var episodes = [Episode]() //建立集數物件
         
@@ -164,7 +164,7 @@ open class Parser{
         }
         comic.setEpisode(episodes)
  
-        return comic;
+        return comic
     }
     
     open func cviewJS(_ htmlString : String) -> [String: String]{
@@ -175,7 +175,7 @@ open class Parser{
         var endTagLower : String.Index?
         
         let urlStratTag = endTag
-        let urlEndTag = "\";"
+        let urlEndTag = "\""
         var urlStartTagUpper : String.Index?
         var urlEndTagLower : String.Index?
         
@@ -213,11 +213,12 @@ open class Parser{
     open func episodeDetail(_ htmlString : String, episode : Episode) -> Episode{
         let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
         let startTagChs = "var chs="
-        let endTagChs = ";var ti="
+        let endTagChs = "var ti="
         let startTagTi = "var ti="
-        let endTagTi = ";var cs="
+        let endTagTi = "var cs="
         let startTagCs = "var cs='"
-        let endTagCs = "';for(var"
+        let endTagCs = "'for(var"
+        var comicAry = [Comic]()
         
         for txt in html {
             let chs = StringUtility.substring(txt, startTagChs, endTagChs)
@@ -238,6 +239,60 @@ open class Parser{
         }
     
         return episode
+    }
+    
+    open func searchComic(_ htmlString : String, onLoadComics: @escaping ([Comic]) -> Void) -> Int{
+        let html : [String] = StringUtility.split(htmlString, separatedBy: "\n")
+        var comics = [Comic]()
+        var text : String = ""
+        var comicId : String?
+        var comicName : String?
+        let comidIdBegin = "<a href=\"/html/"
+        let comidIdEnd = ".html\"><img src="
+        let comidNameBegin = "<b><font color=\"#0099CC\">"
+        let comidNameEnd = "</font></b>"
+        let pageBegin = "&page="
+        let pageEnd = "\"><img src=/images/pagelast.gif"
+        var maxPage = 1
+        
+        for i in 0..<html.count {
+            text = html[i]
+            
+            comicId = StringUtility.substring(text, comidIdBegin, comidIdEnd)
+            
+            if(comicId != nil){
+                text = html[i + 1]
+                comicName = StringUtility.substring(text, comidNameBegin, comidNameEnd)
+                comicName = self.replaceTag(comicName!)
+                let comic = Comic()
+                comic.setId(comicId!)
+                comic.setName(comicName!)
+                comic.setIconUrl(comicId!)
+                comic.setSmallIconUrl(comicId!)
+                comics.append(comic)
+            }else{
+                comicName = nil
+                
+                if(StringUtility.lastIndexOf(source: text, target: pageBegin) != -1){
+                    
+                    let p = StringUtility.lastSubstring(text, pageBegin, pageEnd)
+                    
+                    if(p != nil){
+                        if let tempPage = Int(p!){
+                            maxPage = tempPage
+                        }
+                    }
+                }
+            }
+        }
+        
+        onLoadComics(comics)
+        
+        return maxPage
+    }
+    
+    open func quickSearchComic(_ htmlString : String) -> [String]{
+        return StringUtility.split(htmlString, separatedBy: "|")
     }
     
     open func replaceTag(_ txt : String) -> String{

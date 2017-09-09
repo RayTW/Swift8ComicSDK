@@ -21,6 +21,18 @@ open class StringUtility{
         return source.range(of: search)
     }
     
+    open class func lastIndexOf( source : String, target: String) -> Int {
+        let ret = source.range(of: target, options: .backwards)
+        
+        if( ret != nil){
+            let result = source.characters.distance(from: source.characters.startIndex, to: (ret?.lowerBound)!)
+            
+            return result
+        }
+        
+        return -1
+    }
+    
     open class func indexOfInt(_ source : String, _ search : String) -> Int{
         let range = source.range(of: search)
         let result = source.characters.distance(from: source.characters.startIndex, to: (range?.lowerBound)!)
@@ -67,6 +79,18 @@ open class StringUtility{
         return nil
     }
     
+    open class func lastSubstring(_ source : String,_ upperString : String,_ lowerString : String ) -> String?{
+        
+        let upperIndex = lastIndexOf(source: source, target: upperString)
+        let lowerIndex = lastIndexOf(source: source, target: lowerString)
+        
+        if(upperIndex != -1 && lowerIndex != -1){
+            return substring(source, upperIndex + upperString.characters.count, lowerIndex)
+        }
+        
+        return nil
+    }
+    
     open class func substring(source : String, beginIndex : String.Index) -> String{
         return source.substring(from: beginIndex)
     }
@@ -88,6 +112,13 @@ open class StringUtility{
     open class func dataToStringBig5(data : Data) -> String{
         let encodeBig5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5_HKSCS_1999.rawValue))
         let string = NSString.init(data: data, encoding: encodeBig5)
+        
+        return string! as String;
+    }
+    
+    open class func dataToStringGB2312(data : Data) -> String{
+        let encodeGB2312 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
+        let string = NSString.init(data: data, encoding: encodeGB2312)
         
         return string! as String;
     }
