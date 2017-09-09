@@ -153,7 +153,8 @@ open class R8Comic{
                                     if let data = data {
                                         
                                         let htmlString = StringUtility.dataToStringBig5(data: data)
-                                        self.mParser.searchComic(htmlString, onLoadComics: { (list : [Comic]) in
+                                        //用'_'接收回傳值可不處理，以消除編譯的警告訊息
+                                        _ = self.mParser.searchComic(htmlString, onLoadComics: { (list : [Comic]) in
                                             comics += list
                                         })
                                         
