@@ -149,7 +149,7 @@ class ViewController: UIViewController {
     
     func testQuickSearchComic(keyword : String){
         R8Comic.get().quickSearchComic(keyword) { (comics) in
-            print("searchComic=>\(comics.count)")
+            print("testQuickSearchComic=>\(comics.count)")
             
             for comicTemp : String  in comics {
                 print("name[\(comicTemp)]")

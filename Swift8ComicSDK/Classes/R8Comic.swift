@@ -145,7 +145,7 @@ open class R8Comic{
                             for i in 2..<maxPage {
                                 let url2 = URL(string: self.mConfig.getSearchUrl(keyword, i))
                                 
-                                let request = URLRequest(url: url!)
+                                let request = URLRequest(url: url2!)
                                 let session = URLSession(configuration: URLSessionConfiguration.default)
                                 
                                 downloadGroup.enter()
