@@ -1,5 +1,5 @@
 PODS:
-  - Swift8ComicSDK (1.2.1)
+  - Swift8ComicSDK (1.2.2)
 
 DEPENDENCIES:
   - Swift8ComicSDK (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Swift8ComicSDK: eafb12f5f8ab6d7dd376420d640f3d0345c03b1a
+  Swift8ComicSDK: b60586d20ae6bbf1936f863e9aacd9656e68a14b
 
 PODFILE CHECKSUM: 9f1c93c8c433d9b90ea0d2f4e597e3460aa298ff
 
