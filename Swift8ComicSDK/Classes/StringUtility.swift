@@ -144,8 +144,14 @@ open class StringUtility{
     }
     
     open class func urlEncode(_ source : String,_ encode: UInt) -> String{
-        let encodeUrlString = source.addingPercentEscapes(using: String.Encoding(rawValue: encode))
+        let encodeUrlString = source.data(using: String.Encoding(rawValue: encode), allowLossyConversion: true)
         
-        return encodeUrlString ?? ""
+        return encodeUrlString!.hexEncodedString()
+    }
+}
+
+extension Data {
+    func hexEncodedString() -> String {
+        return map { String(format: "%%%02hhX", $0) }.joined()
     }
 }

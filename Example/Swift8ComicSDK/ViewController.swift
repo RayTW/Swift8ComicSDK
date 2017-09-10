@@ -73,10 +73,12 @@ class ViewController: UIViewController {
     
     @IBAction func searchTest(_ sender: Any) {
         testSearchComic(keyword: "中")
+        testSearchComic(keyword: "1")
     }
     
     @IBAction func quickSearchTest(_ sender: Any) {
         testQuickSearchComic(keyword: "中")
+        testQuickSearchComic(keyword: "1")
     }
     
     func substringTest() -> Void {
