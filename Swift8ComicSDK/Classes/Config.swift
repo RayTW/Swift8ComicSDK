@@ -29,10 +29,10 @@ open class Config {
     }
     
     open func getQuickSearchUrl(_ keyword: String) -> String{
-        return String(format: mQuickSearchUrl,(CGFloat(Float(arc4random()) / Float(UINT32_MAX))), keyword)
+        return String(format: mQuickSearchUrl,(CGFloat(Float(arc4random()) / Float(UINT32_MAX))), StringUtility.urlEncodeUsingGB2312(keyword))
     }
     
     open func getSearchUrl(_ keyword: String, _ page : Int) -> String{
-        return String(format: mSearchUrl, keyword, page)
+        return String(format: mSearchUrl, StringUtility.urlEncodeUsingBIG5(keyword), page)
     }
 }

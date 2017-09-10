@@ -9,6 +9,8 @@
 import Foundation
 
 open class StringUtility{
+    open static let ENCODE_BIG5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5_HKSCS_1999.rawValue))
+    open static let ENCODE_GB2312 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
     
     public init() {
     }
@@ -110,15 +112,13 @@ open class StringUtility{
     }
     
     open class func dataToStringBig5(data : Data) -> String{
-        let encodeBig5 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.big5_HKSCS_1999.rawValue))
-        let string = NSString.init(data: data, encoding: encodeBig5)
+        let string = NSString.init(data: data, encoding: ENCODE_BIG5)
         
         return string! as String;
     }
     
     open class func dataToStringGB2312(data : Data) -> String{
-        let encodeGB2312 = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
-        let string = NSString.init(data: data, encoding: encodeGB2312)
+        let string = NSString.init(data: data, encoding: ENCODE_GB2312)
         
         return string! as String;
     }
@@ -135,4 +135,17 @@ open class StringUtility{
         return source.replacingOccurrences(of: of, with: with)
     }
     
+    open class func urlEncodeUsingBIG5(_ source : String) -> String{
+        return urlEncode(source, ENCODE_BIG5)
+    }
+    
+    open class func urlEncodeUsingGB2312(_ source : String) -> String{
+        return urlEncode(source, ENCODE_GB2312)
+    }
+    
+    open class func urlEncode(_ source : String,_ encode: UInt) -> String{
+        let encodeUrlString = source.addingPercentEscapes(using: String.Encoding(rawValue: encode))
+        
+        return encodeUrlString ?? ""
+    }
 }
