@@ -336,7 +336,8 @@ open class Parser{
         let upper : String.Index? = StringUtility.indexOfUpper(source: st, search: endStr)
         
         if(upper != nil && lower != nil){
-            ret = st.substring(to: lower!) + st.substring(from: upper!)
+            ret =  String(st[..<lower!]) + String(st[upper!...])
+            //ret = st.substring(to: lower!) + st.substring(from: upper!)
         }
         
         return ret
