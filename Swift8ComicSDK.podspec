@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Swift8ComicSDK'
-  s.version          = '1.2.3'
+  s.version          = '2.0.0'
   s.summary          = 'Comic SDK for iOS.'
 
 # This description is used to generate tags and improve search results.
