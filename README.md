@@ -59,42 +59,41 @@ R8Comic.get().loadComicDetail(comic) { (comicDetail : Comic) in
 
 完整流程範例
 ```swift
-// 讀取漫畫存放的伺服器 host
-        R8Comic.get().loadSiteUrlList { (hostMap: [String: String]) in
-            //self.mHostMap = hostMap
-            
-            // 取得全部漫畫
-            R8Comic.get().getAll { (comics: [Comic]) in
-                self.mComics = comics
-                let comic = comics[comics.count - 1]
-                
-                print("comic,id==>\(comic.getId()), name[\(comic.getName())]")
-                print("comic,封面大圖==>\(String(describing:comic.getIconUrl())), 封面小圖[\(String(describing:comic.getSmallIconUrl()))]")
-                
-                // 單1本漫畫，解析說明、集數等等資料…
-                R8Comic.get().loadComicDetail(comic, onLoadDetail: { (comic) in
-                    
-                    print("comic,集數==>\(comic.getEpisode().count)")
-                    // 單集漫畫讀取圖片網址資料
-                    let episode = comic.getEpisode()[0]
-                    //檢查此漫畫集數是否已有串過完整url，若未有完成url則將url重組
-                    if(!episode.getUrl().hasPrefix("http")){
-                        episode.setUrl(hostMap[episode.getCatid()]! + episode.getUrl())
-                    }
-                    
-                    print("comic,episode名稱==>\(episode.getName())")
-                    
-                    print("comic,episode,url==>\(episode.getUrl())")
-                    
-                    R8Comic.get().loadEpisodeDetail(episode, onLoadDetail: { (episode) in
-                        
-                        episode.setUpPages()
-                        
-                        print("episode,單集多張圖片網址=>\(episode.getImageUrlList())")
-                    })
-                })
-            }
-        }
+R8Comic.get().loadSiteUrlList { (hostMap: [String: String]) in
+     //self.mHostMap = hostMap
+     
+     // 取得全部漫畫
+     R8Comic.get().getAll { (comics: [Comic]) in
+         self.mComics = comics
+         let comic = comics[comics.count - 1]
+         
+         print("comic,id==>\(comic.getId()), name[\(comic.getName())]")
+         print("comic,封面大圖==>\(String(describing:comic.getIconUrl())), 封面小圖[\(String(describing:comic.getSmallIconUrl()))]")
+         
+         // 單1本漫畫，解析說明、集數等等資料…
+         R8Comic.get().loadComicDetail(comic, onLoadDetail: { (comic) in
+             
+             print("comic,集數==>\(comic.getEpisode().count)")
+             // 單集漫畫讀取圖片網址資料
+             let episode = comic.getEpisode()[0]
+             //檢查此漫畫集數是否已有串過完整url，若未有完成url則將url重組
+             if(!episode.getUrl().hasPrefix("http")){
+                 episode.setUrl(hostMap[episode.getCatid()]! + episode.getUrl())
+             }
+             
+             print("comic,episode名稱==>\(episode.getName())")
+             
+             print("comic,episode,url==>\(episode.getUrl())")
+             
+             R8Comic.get().loadEpisodeDetail(episode, onLoadDetail: { (episode) in
+                 
+                 episode.setUpPages()
+                 
+                 print("episode,單集多張圖片網址=>\(episode.getImageUrlList())")
+             })
+         })
+     }
+ }
 ```
 
 ## Requirements
