@@ -10,8 +10,8 @@ import UIKit
 import Swift8ComicSDK
 
 class ViewController: UIViewController {
-    fileprivate var mComics : [Comic]?
-    fileprivate var mHostMap : [String : String]?
+    private var mComics : [Comic]?
+    private var mHostMap : [String : String]?
     
     
     override func viewDidLoad() {
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
                 
                 
                 print("comic,id==>\(comic.getId()), name[\(comic.getName())]")
-                print("comic,封面大圖==>\(comic.getIconUrl()), 封面小圖[\(comic.getSmallIconUrl())]")
+                print("comic,封面大圖==>\(String(describing: comic.getIconUrl())), 封面小圖[\(String(describing: comic.getSmallIconUrl()))]")
                 
                 //單1本漫畫，解析說明、集數等等資料…
                 R8Comic.get().loadComicDetail(comic, onLoadDetail: { (comic) in

@@ -1,7 +1,7 @@
 open class R8Comic{
-    fileprivate static let sInstance : R8Comic = R8Comic()
-    fileprivate var mConfig : Config = Config()
-    fileprivate let mParser : Parser = Parser()
+    private static let sInstance : R8Comic = R8Comic()
+    private var mConfig : Config = Config()
+    private let mParser : Parser = Parser()
     
     init() {
         
