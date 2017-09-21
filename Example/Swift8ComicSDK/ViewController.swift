@@ -119,7 +119,10 @@ class ViewController: UIViewController {
                     print("comic,集數==>\(comic.getEpisode().count)")
                     //單集漫畫讀取圖片網址資料
                     let episode = comic.getEpisode()[0]
-                    episode.setUrl(hostMap[episode.getCatid()]! + episode.getUrl())
+                    //檢查此漫畫集數是否已有串過完整url，若未有完成url則將url重組
+                    if(!episode.getUrl().hasPrefix("http")){
+                        episode.setUrl(hostMap[episode.getCatid()]! + episode.getUrl())
+                    }
                     
                     
                     print("comic,episode,ch==>\(episode)")
