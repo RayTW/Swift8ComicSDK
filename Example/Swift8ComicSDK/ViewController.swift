@@ -72,8 +72,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchTest(_ sender: Any) {
-        testSearchComic(keyword: "中")
-        testSearchComic(keyword: "1")
+//        testSearchComic(keyword: "中")
+//        testSearchComic(keyword: "1")
+        testSearchComic(keyword: "食戟")
     }
     
     @IBAction func quickSearchTest(_ sender: Any) {
@@ -147,8 +148,9 @@ class ViewController: UIViewController {
             print("searchComic=>\(comics.count)")
             
             for comicTemp : Comic  in comics {
-                print("id==>\(comicTemp.getId()), name[\(comicTemp.getName())]")
+                print("id==>\(comicTemp.getId()), name[\(comicTemp.getName()), smallIconUrl[\(comicTemp.getSmallIconUrl())]")
             }
+            
         }
     }
     
