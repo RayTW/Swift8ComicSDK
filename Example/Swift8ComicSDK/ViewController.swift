@@ -88,6 +88,30 @@ class ViewController: UIViewController {
         print("\(StringUtility.substring(str, 50, 54))")
     }
     
+    @IBAction func showComicEpisodeList(_ sender: Any) {
+        //讀取漫畫存放的伺服器host
+        R8Comic.get().loadSiteUrlList { (hostMap : [String : String]) in
+            self.mHostMap = hostMap
+            
+            let comic = R8Comic.get().generatorFakeComic("104", name: "xxx")
+
+            
+            
+            print("comic,id==>\(comic.getId()), name[\(comic.getName())]")
+            print("comic,封面大圖==>\(String(describing: comic.getIconUrl())), 封面小圖[\(String(describing: comic.getSmallIconUrl()))]")
+            
+            //單1本漫畫，解析說明、集數等等資料…
+            R8Comic.get().loadComicDetail(comic, onLoadDetail: { (comic) in
+                
+                
+                print("comic,集數==>\(comic.getEpisode().count)")
+                
+                for episode : Episode  in comic.getEpisode() {
+                    print("name[(\(episode.getName())]")
+                }
+            })
+        }
+    }
     func doCompleteTest(_ comicId : String!) -> Void {
         //讀取漫畫存放的伺服器host
         R8Comic.get().loadSiteUrlList { (hostMap : [String : String]) in
@@ -148,7 +172,7 @@ class ViewController: UIViewController {
             print("searchComic=>\(comics.count)")
             
             for comicTemp : Comic  in comics {
-                print("id==>\(comicTemp.getId()), name[\(comicTemp.getName()), smallIconUrl[\(comicTemp.getSmallIconUrl())]")
+                print("id==>\(comicTemp.getId()), name[\(comicTemp.getName()), smallIconUrl[\(String(describing: comicTemp.getSmallIconUrl()))]")
             }
             
         }
