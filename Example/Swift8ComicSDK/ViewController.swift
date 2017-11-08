@@ -74,6 +74,7 @@ class ViewController: UIViewController {
     @IBAction func searchTest(_ sender: Any) {
 //        testSearchComic(keyword: "中")
 //        testSearchComic(keyword: "1")
+        print("searchTest")
         testSearchComic(keyword: "食戟")
     }
     
