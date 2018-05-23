@@ -1,5 +1,5 @@
 PODS:
-  - Swift8ComicSDK (2.0.4)
+  - Swift8ComicSDK (2.0.5)
 
 DEPENDENCIES:
   - Swift8ComicSDK (from `../`)
