@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01596E882A8D0C3578712011E2836580 /* Swift8ComicSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4B64BDF9AB2AFFDF0A56B3E12E3802 /* Swift8ComicSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1254B8EA39B55210318494F4255A865A /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E51D60585323B57F1D455F6C83B9AF /* Comic.swift */; };
+		01596E882A8D0C3578712011E2836580 /* Swift8ComicSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 711A85B1631682AB4503D3EE06E23F9B /* Swift8ComicSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B748D916620E78947CA6D5FD67B32B6 /* Pods-Swift8ComicSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EE4576609B9BD5C62395B2122DB9EA /* Pods-Swift8ComicSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		359FEB08BDC901247E810AFB8243F5DE /* StringUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E430888968443E0A4C79D71366CCC711 /* StringUtility.swift */; };
+		3265F7BAB2EDD20853D599C05C714D2E /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240550959654ECBBC7CAB50A186F28A9 /* Episode.swift */; };
 		369796E1ADB1AC2E86EFB950998D3A02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		3A8D393B1C4BA2319F561A818CA48DB7 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B9A3B619EA6F5E55D133CF39DF41DB /* Parser.swift */; };
+		3DBA6F185B07B968A528560259082318 /* Swift8ComicSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDC4F3C4ABC46772B797DA27FA2380 /* Swift8ComicSDK-dummy.m */; };
+		422F7B61208D44A60E9A00FE4AC8F715 /* UserInterfaceState.xcuserstate in Sources */ = {isa = PBXBuildFile; fileRef = B27C2057E14A71088E22FCC1661DC1A0 /* UserInterfaceState.xcuserstate */; };
 		4F1C91CB0D60B927E00AB0BB4FACFB93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		54657DA327C3E8FCEA62A80B5E4F7607 /* R8Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B928EE1FF793EA25088464C2EE1B0404 /* R8Comic.swift */; };
-		8D6D300BD025B907BE5146BBAD588749 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000A6A338768571B063934DEF05C9E5 /* Config.swift */; };
-		A14593358D4998B008F3BEBC3AA70047 /* JSnview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A73E51770F191FE43A2BE70E51A3ACF /* JSnview.swift */; };
-		B017CC04EA36B2C66E5D4DA1907D43AB /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C32DDA9C9FF4803D4D2378EC44DF69 /* Episode.swift */; };
+		54D72CF8DC9C10B5796A1F6CA21281B3 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E16470D8E7B3EAD74CBD92144B5AC4B /* Parser.swift */; };
+		67962863F9EA57A6DCA2A7FC39D6518B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C96928BAF37830B05B6882761350F /* Config.swift */; };
+		89479E7FBA69E57597BC9A0E2154FE97 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE6EAC4CCFB8E5C9A5DC16843C9587 /* Comic.swift */; };
 		D83C3A4A709346936F13EC5C362AC1BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		D84CB7F69972317601FFBE44BF4ED580 /* JSnview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F4440B61329169CBC2D3715AA2B5B /* JSnview.swift */; };
+		DF50254F3FFD172149F70ACA0695B788 /* StringUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA57587D89B91FF2688376A642292818 /* StringUtility.swift */; };
 		E1998203DE0B5CAF1BB8BDBD853250C3 /* Pods-Swift8ComicSDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E448B08C6415D9170E1DDF882EBEF06E /* Pods-Swift8ComicSDK_Example-dummy.m */; };
-		E9D802F13F88000EBB9F8F39E100CC63 /* Swift8ComicSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DC5834B7DBD4A941E104EF80E2C767 /* Swift8ComicSDK-dummy.m */; };
+		F2B98F43CC537A76D913D363CF55B3C7 /* R8Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FB6C3777B3FD293C6CE1C9AB6901C1 /* R8Comic.swift */; };
 		F7FA7E339AABB2261430DC2A03BB8C59 /* Pods-Swift8ComicSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6E7A17D4605CE4B62740CC7FB86417 /* Pods-Swift8ComicSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEBEF1B53D2C7F76313848C3CAA4441E /* Pods-Swift8ComicSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 080CB9364E9DAB87A42167624BC3ADEB /* Pods-Swift8ComicSDK_Tests-dummy.m */; };
 /* End PBXBuildFile section */
@@ -43,47 +44,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0421DC847153E56C768DE2BA8863813A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		080CB9364E9DAB87A42167624BC3ADEB /* Pods-Swift8ComicSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swift8ComicSDK_Tests-dummy.m"; sourceTree = "<group>"; };
-		094FDDFFD68F71E486ED63A0BD5E3855 /* Swift8ComicSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swift8ComicSDK.xcconfig; sourceTree = "<group>"; };
-		0BF106443A7D80EEEEA540631BD32D4A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		099B3056856A1800830F57DA133AB32A /* Swift8ComicSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swift8ComicSDK.xcconfig; sourceTree = "<group>"; };
 		138FF8CE54723CF9410AC9B62B9FAA9F /* Pods-Swift8ComicSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift8ComicSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		15EE4576609B9BD5C62395B2122DB9EA /* Pods-Swift8ComicSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swift8ComicSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
-		1A73E51770F191FE43A2BE70E51A3ACF /* JSnview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSnview.swift; path = Swift8ComicSDK/Classes/JSnview.swift; sourceTree = "<group>"; };
-		1D4B64BDF9AB2AFFDF0A56B3E12E3802 /* Swift8ComicSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swift8ComicSDK-umbrella.h"; sourceTree = "<group>"; };
 		1E6E7A17D4605CE4B62740CC7FB86417 /* Pods-Swift8ComicSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swift8ComicSDK_Example-umbrella.h"; sourceTree = "<group>"; };
 		203D092A6363CC4B9BF8F919FCF730B2 /* Pods-Swift8ComicSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift8ComicSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		22477F6FE06EE85FCE9EE029F83C1B8C /* Pods-Swift8ComicSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swift8ComicSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		2DB4A430F89A452832D4EFE5FE6C6163 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3000A6A338768571B063934DEF05C9E5 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Swift8ComicSDK/Classes/Config.swift; sourceTree = "<group>"; };
+		240550959654ECBBC7CAB50A186F28A9 /* Episode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Episode.swift; path = Swift8ComicSDK/Classes/Episode.swift; sourceTree = "<group>"; };
+		2B1F4440B61329169CBC2D3715AA2B5B /* JSnview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSnview.swift; path = Swift8ComicSDK/Classes/JSnview.swift; sourceTree = "<group>"; };
 		41DA8E3801E684B2CFC17D80BB0CC883 /* Pods-Swift8ComicSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift8ComicSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		441C96928BAF37830B05B6882761350F /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Swift8ComicSDK/Classes/Config.swift; sourceTree = "<group>"; };
 		53520E61C3E1394FEF9FE8957D4DCC1C /* Pods-Swift8ComicSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swift8ComicSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		5959D7C1193C3863A08913D2AB1916FC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5B0C13016CAF5CB20C9AC6B4FAC47BDF /* Pods-Swift8ComicSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swift8ComicSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6109987AE79554AA08E26391AE1E8E01 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6190FF9CD8E08B631D2F52E210F96A24 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		68C64C0C206E7A4AF7C3931C68544E7D /* Pods-Swift8ComicSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift8ComicSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		711A85B1631682AB4503D3EE06E23F9B /* Swift8ComicSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swift8ComicSDK-umbrella.h"; sourceTree = "<group>"; };
 		79CF0CE73BFF3B60DBF550AF48083FC5 /* Pods-Swift8ComicSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
-		79E51D60585323B57F1D455F6C83B9AF /* Comic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Comic.swift; path = Swift8ComicSDK/Classes/Comic.swift; sourceTree = "<group>"; };
 		7F21E019A220AB858E831E1637CD64C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87FB6C3777B3FD293C6CE1C9AB6901C1 /* R8Comic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = R8Comic.swift; path = Swift8ComicSDK/Classes/R8Comic.swift; sourceTree = "<group>"; };
 		88263E7331CA0E3F3FA60FA32BFFBF2B /* Swift8ComicSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swift8ComicSDK.framework; path = Swift8ComicSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E16470D8E7B3EAD74CBD92144B5AC4B /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Swift8ComicSDK/Classes/Parser.swift; sourceTree = "<group>"; };
+		8E391E7A799450A5D00F14734CF4ED9C /* Swift8ComicSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swift8ComicSDK-prefix.pch"; sourceTree = "<group>"; };
 		9333DCECB063E0E08F7D9CC683C5F98A /* Pods-Swift8ComicSDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95262BCA2B805C467DB312039001ABD1 /* Swift8ComicSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swift8ComicSDK.modulemap; sourceTree = "<group>"; };
-		9EEFADB529CEF5A8498AC365A7B7C140 /* Swift8ComicSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Swift8ComicSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A2B9A3B619EA6F5E55D133CF39DF41DB /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Swift8ComicSDK/Classes/Parser.swift; sourceTree = "<group>"; };
+		9CEDC4F3C4ABC46772B797DA27FA2380 /* Swift8ComicSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swift8ComicSDK-dummy.m"; sourceTree = "<group>"; };
 		A5C60098D49AF7704F9394390FB8C12C /* Pods-Swift8ComicSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swift8ComicSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B4284E131D3BE8956E88426E8E7020A4 /* Swift8ComicSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swift8ComicSDK-prefix.pch"; sourceTree = "<group>"; };
+		B27C2057E14A71088E22FCC1661DC1A0 /* UserInterfaceState.xcuserstate */ = {isa = PBXFileReference; includeInIndex = 1; path = UserInterfaceState.xcuserstate; sourceTree = "<group>"; };
 		B5A1577291164A80AEC75A2DA5AF080E /* Pods-Swift8ComicSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Swift8ComicSDK_Tests.modulemap"; sourceTree = "<group>"; };
 		B76BC197DF34011D7C9A9BBD6EF76956 /* Pods-Swift8ComicSDK_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Example-resources.sh"; sourceTree = "<group>"; };
-		B928EE1FF793EA25088464C2EE1B0404 /* R8Comic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = R8Comic.swift; path = Swift8ComicSDK/Classes/R8Comic.swift; sourceTree = "<group>"; };
-		D3C32DDA9C9FF4803D4D2378EC44DF69 /* Episode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Episode.swift; path = Swift8ComicSDK/Classes/Episode.swift; sourceTree = "<group>"; };
+		C2EE6EAC4CCFB8E5C9A5DC16843C9587 /* Comic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Comic.swift; path = Swift8ComicSDK/Classes/Comic.swift; sourceTree = "<group>"; };
+		DD4E6BBCD78DFEBD7AC93D142BAFF3B0 /* Swift8ComicSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swift8ComicSDK.modulemap; sourceTree = "<group>"; };
 		E0B3B98EF236124EDA9BFE22CB626718 /* Pods_Swift8ComicSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Swift8ComicSDK_Tests.framework; path = "Pods-Swift8ComicSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E124F839E2F96DDB186BED0FFBA5DB64 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F183BD0851F8A4FC163AC6A61EA1FB /* Pods-Swift8ComicSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Swift8ComicSDK_Example.modulemap"; sourceTree = "<group>"; };
-		E430888968443E0A4C79D71366CCC711 /* StringUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringUtility.swift; path = Swift8ComicSDK/Classes/StringUtility.swift; sourceTree = "<group>"; };
 		E448B08C6415D9170E1DDF882EBEF06E /* Pods-Swift8ComicSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swift8ComicSDK_Example-dummy.m"; sourceTree = "<group>"; };
-		E4DC5834B7DBD4A941E104EF80E2C767 /* Swift8ComicSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swift8ComicSDK-dummy.m"; sourceTree = "<group>"; };
 		E4DF21EDABCE13CD674695A6C18FEC72 /* Pods-Swift8ComicSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift8ComicSDK_Tests-resources.sh"; sourceTree = "<group>"; };
+		EA57587D89B91FF2688376A642292818 /* StringUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringUtility.swift; path = Swift8ComicSDK/Classes/StringUtility.swift; sourceTree = "<group>"; };
 		EB55C1D8A4ABA2E5F984F532775A20F7 /* Pods_Swift8ComicSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Swift8ComicSDK_Example.framework; path = "Pods-Swift8ComicSDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE73F4590575BB2D019C541810E21FF2 /* Swift8ComicSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Swift8ComicSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,18 +144,50 @@
 			path = "Target Support Files/Pods-Swift8ComicSDK_Tests";
 			sourceTree = "<group>";
 		};
-		4628117888CB460E8E2707AF262DCBAE /* Swift8ComicSDK */ = {
+		2E773740CB7238DE72361B2C51CB6C48 /* ray.xcuserdatad */ = {
 			isa = PBXGroup;
 			children = (
-				79E51D60585323B57F1D455F6C83B9AF /* Comic.swift */,
-				3000A6A338768571B063934DEF05C9E5 /* Config.swift */,
-				D3C32DDA9C9FF4803D4D2378EC44DF69 /* Episode.swift */,
-				1A73E51770F191FE43A2BE70E51A3ACF /* JSnview.swift */,
-				A2B9A3B619EA6F5E55D133CF39DF41DB /* Parser.swift */,
-				B928EE1FF793EA25088464C2EE1B0404 /* R8Comic.swift */,
-				E430888968443E0A4C79D71366CCC711 /* StringUtility.swift */,
-				DD9DC6C1664E84350D699A8C5716136D /* Pod */,
-				7F950EC65ACD7F5E6A1CED30F422016C /* Support Files */,
+				B27C2057E14A71088E22FCC1661DC1A0 /* UserInterfaceState.xcuserstate */,
+			);
+			name = ray.xcuserdatad;
+			path = ray.xcuserdatad;
+			sourceTree = "<group>";
+		};
+		315968C07485D487F97BB6F758C48F4F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E124F839E2F96DDB186BED0FFBA5DB64 /* Info.plist */,
+				DD4E6BBCD78DFEBD7AC93D142BAFF3B0 /* Swift8ComicSDK.modulemap */,
+				099B3056856A1800830F57DA133AB32A /* Swift8ComicSDK.xcconfig */,
+				9CEDC4F3C4ABC46772B797DA27FA2380 /* Swift8ComicSDK-dummy.m */,
+				8E391E7A799450A5D00F14734CF4ED9C /* Swift8ComicSDK-prefix.pch */,
+				711A85B1631682AB4503D3EE06E23F9B /* Swift8ComicSDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Swift8ComicSDK";
+			sourceTree = "<group>";
+		};
+		32470B1FA358715A131D1172C66CA6F2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FDAD0141C2ACE0F59EA9BC85DC8006A /* Swift8ComicSDK */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3FDAD0141C2ACE0F59EA9BC85DC8006A /* Swift8ComicSDK */ = {
+			isa = PBXGroup;
+			children = (
+				C2EE6EAC4CCFB8E5C9A5DC16843C9587 /* Comic.swift */,
+				441C96928BAF37830B05B6882761350F /* Config.swift */,
+				240550959654ECBBC7CAB50A186F28A9 /* Episode.swift */,
+				2B1F4440B61329169CBC2D3715AA2B5B /* JSnview.swift */,
+				8E16470D8E7B3EAD74CBD92144B5AC4B /* Parser.swift */,
+				87FB6C3777B3FD293C6CE1C9AB6901C1 /* R8Comic.swift */,
+				EA57587D89B91FF2688376A642292818 /* StringUtility.swift */,
+				729784F5A4A591339E619BD725F186CB /* Pod */,
+				315968C07485D487F97BB6F758C48F4F /* Support Files */,
+				A5BF47A8B32F09C95396941E9662D17C /* Test.xcworkspace */,
 			);
 			name = Swift8ComicSDK;
 			path = ../..;
@@ -168,12 +202,13 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4E62DDCB47C4F6DB0ACD393DFA501FFE /* Development Pods */ = {
+		4C54063E4BA341D13D47704B7B9F9610 /* xcuserdata */ = {
 			isa = PBXGroup;
 			children = (
-				4628117888CB460E8E2707AF262DCBAE /* Swift8ComicSDK */,
+				2E773740CB7238DE72361B2C51CB6C48 /* ray.xcuserdatad */,
 			);
-			name = "Development Pods";
+			name = xcuserdata;
+			path = xcuserdata;
 			sourceTree = "<group>";
 		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
@@ -184,29 +219,34 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		729784F5A4A591339E619BD725F186CB /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				6190FF9CD8E08B631D2F52E210F96A24 /* LICENSE */,
+				6109987AE79554AA08E26391AE1E8E01 /* README.md */,
+				EE73F4590575BB2D019C541810E21FF2 /* Swift8ComicSDK.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				4E62DDCB47C4F6DB0ACD393DFA501FFE /* Development Pods */,
+				32470B1FA358715A131D1172C66CA6F2 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				092891A3F4550C8C25B0C4A162800AE5 /* Products */,
 				4BCE41A42CBB6535E39EC18A8551E79A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F950EC65ACD7F5E6A1CED30F422016C /* Support Files */ = {
+		A5BF47A8B32F09C95396941E9662D17C /* Test.xcworkspace */ = {
 			isa = PBXGroup;
 			children = (
-				2DB4A430F89A452832D4EFE5FE6C6163 /* Info.plist */,
-				95262BCA2B805C467DB312039001ABD1 /* Swift8ComicSDK.modulemap */,
-				094FDDFFD68F71E486ED63A0BD5E3855 /* Swift8ComicSDK.xcconfig */,
-				E4DC5834B7DBD4A941E104EF80E2C767 /* Swift8ComicSDK-dummy.m */,
-				B4284E131D3BE8956E88426E8E7020A4 /* Swift8ComicSDK-prefix.pch */,
-				1D4B64BDF9AB2AFFDF0A56B3E12E3802 /* Swift8ComicSDK-umbrella.h */,
+				4C54063E4BA341D13D47704B7B9F9610 /* xcuserdata */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Swift8ComicSDK";
+			name = Test.xcworkspace;
+			path = Swift8ComicSDK/Classes/Test.xcworkspace;
 			sourceTree = "<group>";
 		};
 		B00F5EF3014CCCC2319B316E3218E7BB /* Pods-Swift8ComicSDK_Example */ = {
@@ -233,16 +273,6 @@
 				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DD9DC6C1664E84350D699A8C5716136D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				0421DC847153E56C768DE2BA8863813A /* LICENSE */,
-				0BF106443A7D80EEEEA540631BD32D4A /* README.md */,
-				9EEFADB529CEF5A8498AC365A7B7C140 /* Swift8ComicSDK.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +327,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD44FF13D324E75BD525CE7A847DB9D1 /* Build configuration list for PBXNativeTarget "Swift8ComicSDK" */;
 			buildPhases = (
-				D61B9F1F71EF4EDFA80015B59B355B90 /* Sources */,
+				9B01C532D865654BA6ED2F2065AAC23F /* Sources */,
 				0CF89C5DA850BF43EAFD917B836411F0 /* Frameworks */,
 				E43211814B83D993E434F7EDA3ECADC3 /* Headers */,
 			);
@@ -373,18 +403,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D61B9F1F71EF4EDFA80015B59B355B90 /* Sources */ = {
+		9B01C532D865654BA6ED2F2065AAC23F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1254B8EA39B55210318494F4255A865A /* Comic.swift in Sources */,
-				8D6D300BD025B907BE5146BBAD588749 /* Config.swift in Sources */,
-				B017CC04EA36B2C66E5D4DA1907D43AB /* Episode.swift in Sources */,
-				A14593358D4998B008F3BEBC3AA70047 /* JSnview.swift in Sources */,
-				3A8D393B1C4BA2319F561A818CA48DB7 /* Parser.swift in Sources */,
-				54657DA327C3E8FCEA62A80B5E4F7607 /* R8Comic.swift in Sources */,
-				359FEB08BDC901247E810AFB8243F5DE /* StringUtility.swift in Sources */,
-				E9D802F13F88000EBB9F8F39E100CC63 /* Swift8ComicSDK-dummy.m in Sources */,
+				89479E7FBA69E57597BC9A0E2154FE97 /* Comic.swift in Sources */,
+				67962863F9EA57A6DCA2A7FC39D6518B /* Config.swift in Sources */,
+				3265F7BAB2EDD20853D599C05C714D2E /* Episode.swift in Sources */,
+				D84CB7F69972317601FFBE44BF4ED580 /* JSnview.swift in Sources */,
+				54D72CF8DC9C10B5796A1F6CA21281B3 /* Parser.swift in Sources */,
+				F2B98F43CC537A76D913D363CF55B3C7 /* R8Comic.swift in Sources */,
+				DF50254F3FFD172149F70ACA0695B788 /* StringUtility.swift in Sources */,
+				3DBA6F185B07B968A528560259082318 /* Swift8ComicSDK-dummy.m in Sources */,
+				422F7B61208D44A60E9A00FE4AC8F715 /* UserInterfaceState.xcuserstate in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +472,7 @@
 		};
 		154DCA473F19CAEB88B1CAB292C1A7A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 094FDDFFD68F71E486ED63A0BD5E3855 /* Swift8ComicSDK.xcconfig */;
+			baseConfigurationReference = 099B3056856A1800830F57DA133AB32A /* Swift8ComicSDK.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -641,7 +672,7 @@
 		};
 		ABF83D7B11CE5D60A20A3744C0A614CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 094FDDFFD68F71E486ED63A0BD5E3855 /* Swift8ComicSDK.xcconfig */;
+			baseConfigurationReference = 099B3056856A1800830F57DA133AB32A /* Swift8ComicSDK.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
